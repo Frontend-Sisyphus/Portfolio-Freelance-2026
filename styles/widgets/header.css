@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@import "../../app/globals.css";
+
+.header {
+    @apply fixed flex justify-between items-center top-[40px] mx-auto 
+           py-[15px] px-[20px] w-full max-w-[1220px] h-[59px] backdrop-blur-md 
+           bg-linear-to-r from-gradient-start to-gradient-end rounded-[15px] z-100;
+
+    @media (max-width: 480px) {
+        @apply hidden;
+    }
+}
+
+.header-left {
+    @apply flex items-center gap-x-[12px];
+}
+
+.header-left-logo {
+    @apply h-[49px];
+}
+
+.header-left-divisionLine {
+    @apply w-[2px] h-[39px] bg-white;
+}
+
+.header-left-text {
+    @apply text-white text-[20px] font-ru-primary font-bold;
+}
+
+.header-right {
+    @apply flex items-center gap-x-[16px];
+}
+
+.header-right-nav {
+    @apply relative flex items-center gap-x-[25px];
+}
+
+.header-right-nav a {
+    @apply px-[5px] text-[16px] font-ru-primary font-medium;
+}
+
+.link-active {
+    @apply text-white;
+}
+
+.link-inactive {
+    @apply text-white2 brightness-60;
+}
+
+.header-right-toggleThemeButton {
+    @apply relative flex justify-center items-center w-[32px] h-[32px] 
+           border-[1px] border-white rounded-[7.5px] overflow-hidden;
+}
+
+.header-right-toggleThemeButton-iconWrapper {
+    @apply absolute;
+}
+
+.header-right-languageToggler {
+    @apply relative inline-block w-[60px] h-[32px] border-[1px] border-white rounded-[7.5px];
+}
+
+.header-right-languageToggler input {
+    @apply hidden;
+}
+
+.header-right-languageToggler input:checked + .header-right-languageToggler-slider {
+    @apply translate-x-[28px];
+}
+
+.header-right-languageToggler-slider {
+    @apply absolute top-0 left-0 bg-[#171717] rounded-[32px] 
+           duration-400 ease-in-out;
+}
+
+.header-right-languageToggler-slider:before {
+    @apply absolute content-[''] top-[4px] left-[4px] w-[22px] h-[22px] 
+           bg-[#ffffff] rounded-[5px] cursor-pointer;
+}
+
+.header-right-languageToggler-ru,
+.header-right-languageToggler-en {
+    @apply absolute top-[3px] text-[16px] font-en-secondary duration-400 ease-in-out z-10;
+}
+
+.header-right-languageToggler-ru {
+    @apply left-[7px];
+}
+
+.header-right-languageToggler-en {
+    @apply right-[7px];
+}
+
+.lang-active {
+    @apply text-theme;
+}
+
+.lang-inactive {
+    @apply text-white
+}
+
+/* .header-icons {
+    @apply flex items-center gap-x-[18px];
+}
+
+.header-languageBlock {
+    @apply absolute flex items-center gap-x-[4px] left-[calc((100%-90px)/2)] bottom-[-34px] px-[15px] py-[2px] h-[34px] backdrop-blur-xs bg-linear-to-r from-gradient-start to-gradient-end rounded-b-[10px];
+}
+
+.header-languageBlock-text {
+    @apply flex items-center h-[18px] text-white text-[20px] font-en-primary font-bold;
+} */
