@@ -1,7 +1,7 @@
 "use client";
 import { usePathname, useRouter } from '@/i18n/navigation';
 
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, useScroll, motion } from "motion/react";
 
 import { useTheme } from "next-themes";
 
@@ -25,6 +25,8 @@ const Header = () => {
 
   const { theme, setTheme } = useTheme();
 
+  const { scrollYProgress } = useScroll()
+
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
@@ -35,19 +37,10 @@ const Header = () => {
 
     setTimeout(() => router.replace("/", { locale: newLocale }), 600);
   };
-
-  // useEffect(() => {
-  //   const browserLang = navigator.language;
-  //
-  //   localStorage.setItem("userBrowserLang", browserLang);
-  //
-  //   const locale = browserLang.slice(0, 2);
-  //   localStorage.setItem("locale", locale);
-  //
-  //   console.log("Язык браузера сохранен в localStorage:", browserLang, locale);
-  // }, []);
   return (
     <header className="header">
+      <motion.div style={{ scaleX: scrollYProgress }} className="header-pageProgressLine"/>
+
       {/* Frontend Sisyphus logo */}
       <div className="header-left">
         <img src="/static/frontend-sisyphus-logo.png" alt="" className="header-left-logo"/>
@@ -118,34 +111,6 @@ const Header = () => {
           <p className={`header-right-languageToggler-en ${locale === "en" ? "lang-active" : "lang-inactive"}`}>en</p>
         </label>
       </div>
-
-      {/* <div className="header-icons">
-        {headerIcons.map((icon) => (
-          <Link key={icon.id} href={icon.path} data-blobity-magnetic="false">
-            {icon.component}
-          </Link>
-        ))}
-      </div> */}
-
-      {/*<div className="header-languageBlock">*/}
-      {/*  <button*/}
-      {/*    data-blobity-radius="5"*/}
-      {/*    data-blobity-magnetic="false"*/}
-      {/*    className="header-languageBlock-text"*/}
-      {/*  >*/}
-      {/*    eng*/}
-      {/*  </button>*/}
-
-      {/*  <p className="header-languageBlock-text">/</p>*/}
-
-      {/*  <button*/}
-      {/*    data-blobity-radius="5"*/}
-      {/*    data-blobity-magnetic="false"*/}
-      {/*    className="header-languageBlock-text"*/}
-      {/*  >*/}
-      {/*    rus*/}
-      {/*  </button>*/}
-      {/*</div>*/}
     </header>
   );
 };
