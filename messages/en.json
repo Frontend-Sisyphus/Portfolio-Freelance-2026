@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "title": "Boris Karabut — Frontend developer",
+    "description": "Frontend freelancer: responsive web dev, full project delivery. Browse portfolio →"
+  },
+  "header": {
+    "links": ["Home","Work","Projects","About","Contacts"]
+  },
+  "footer": {
+    "copyright": "/ Boris Karabut / ALL RIGHTS RESERVED",
+    "buttonText": "Scroll to top"
+  },
+  "greetings": {
+    "startText": "Hey, there",
+    "title1": "I'm ",
+    "title2": "Boris Karabut",
+    "title3": "a Frontend developer",
+    "description": "who works across the stack to deliver fast and beautiful websites and web apps that user will love",
+    "buttonText": "Contact me"
+  },
+  "work": {
+    "title": "Work experience",
+    "yearsCount": "2 years",
+    "workplaces": [{
+      "occupation": "Middle Frontend developer",
+      "companyName": "Coordinate System LLC",
+      "timeGap": "Jul 2024 - Jun 2025",
+      "results": ["Launched the Startup Cycle project, which got into the Skolkovo startup pre-accelerator.","Developed the service from scratch: I designed the architecture, I chose the technology stack.","Optimized application performance: reduced loading time, improved interface responsiveness.","Covered the code with unit tests (Jest, React Testing Library), increasing the stability of the product.","Participated in the design of new functionality: offered ideas, discussed UX / UI with the team."]
+    },{
+      "occupation": "Junior Frontend developer",
+      "companyName": "AHISS",
+      "timeGap": "May 2023 - Apr 2024",
+      "results": ["Launched a website of the most popular cybersecurity competition in the Russian Federation (CTF Cup)","Launched a website for the sale of merch for participants of CTF competitions and events.","Migrated one of the projects from Vue to React.","Optimized existing projects.","Estimated task deadlines.","Close interacted with all team members (from the designer to the information security specialist)."]
+    }]
+  },
+  "projects": {
+    "title": "Projects"
+  },
+  "about": {
+    "title": "I make beautiful and fast UI's",
+    "paragraphs": ["My passion is to create modern and fast products that promote business growth. I like to contribute to their improvement so that both the business and the end user are satisfied with the result.","From writing my first lines of code back in late 2021 to this point I have been constantly improving my development and architecture skills, improving the final product in the form of an UI/UX as I work and solving complicated tasks that become more complex and complicated over time to ensure growth in my field.","Each task is unique, so I learn and develop in each of them in order not only to give my best, but also to offer solutions that improve the final product. Do you want to know more? Here is"]
+  },
+  "contacts": {
+    "title": "Want to hire me?",
+    "buttonText": "Contact me"
+  }
+}

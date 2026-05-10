@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "KumbhSans";
+  src: url("./fonts/KumbhSans-VariableFont.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "NotoSans";
+  src: url("./fonts/NotoSans-VariableFont.ttf"), url("./fonts/NotoSans-Italic-VariableFont.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Syne";
+  src: url("./fonts/Syne-VariableFont.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Play";
+  src: url("./fonts/Play-Regular.ttf"), url("./fonts/Play-Bold.ttf") format("truetype");
+}
+
+:root {
+  --color-theme: #080808;
+
+  --color-white: #ffffff;
+  --color-white2: #e4e9ff;
+
+  --color-black: #0d0d0e;
+
+  --color-gradient-start: #7676761f;
+  --color-gradient-end: #808c9d1f;
+
+  --color-gradient2-start: #71bcc0;
+  --color-gradient2-center: #4a87b3;
+  --color-gradient2-end: #2f79be;
+
+  --font-en-primary: "KumbhSans";
+  --font-en-secondary: "Syne";
+  --font-ru-primary: "NotoSans";
+  --font-ru-secondary: "Play";
+}
+
+@theme inline {
+  --color-theme: var(--color-theme);
+
+  --color-white: var(--color-white);
+  --color-white2: var(--color-white2);
+
+  --color-black: var(--color-black);
+
+  --color-gradient-start: var(--color-gradient-start);
+  --color-gradient-end: var(--color-gradient-end);
+
+  --color-gradient2-start: var(--color-gradient2-start);
+  --color-gradient2-center: var(--color-gradient2-center);
+  --color-gradient2-end: var(--color-gradient2-end);
+
+  --font-en-primary: var(--font-en-primary);
+  --font-en-secondary: var(--font-en-secondary);
+  --font-ru-primary: var(--font-ru-primary);
+  --font-ru-secondary: var(--font-ru-secondary);
+}
+
+* {
+  @apply scroll-smooth;
+}
+
+body {
+  @apply relative grid justify-items-center min-w-screen min-h-screen bg-theme overflow-x-hidden;
+
+  @media (max-width: 480px) {
+    @apply px-[20px];
+  }
+}
+
+a {
+  @apply outline-none;
+}
+
+input {
+  @apply outline-none;
+}
+
+textarea {
+  @apply outline-none;
+}
+
+button {
+  @apply outline-none;
+}
+
+.sectionTitle {
+  @apply text-white text-[60px] font-ru-secondary font-bold leading-[60px] uppercase brightness-[0.85];
+
+  @media (max-width: 480px) {
+    @apply text-[34px] leading-[42px];
+  }
+
+  @media (max-width: 400px) {
+    @apply text-[28px] leading-[34px];
+  }
+}
+
+.desktop {
+  @apply grid;
+
+  @media (max-width: 480px) {
+    @apply hidden;
+  }
+}
+
+.mobile {
+  @apply hidden;
+
+  @media (max-width: 480px) {
+    @apply grid;
+  }
+}
