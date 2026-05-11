@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@import "../../app/globals.css";
+
+.tools {
+  @apply relative grid justify-items-start pb-[100px] w-full h-auto;
+}
+
+.tools-container {
+  @apply grid gap-y-[12px] mt-[24px] w-full;
+}
+
+.tools-container-top {
+  @apply flex items-center w-full;
+}
+
+.tools-container-top > hr:first-child {
+  @apply w-full h-[1px] bg-linear-to-r from-theme
+        via-gradient2-center to-gradient2-end border-none;
+}
+
+.tools-container-top > hr:last-child {
+  @apply w-full h-[1px] bg-linear-to-l from-theme 
+        via-gradient2-center to-gradient2-end border-none;
+}
+
+.tools-container-top-title {
+  @apply w-auto px-[30px] bg-linear-to-br bg-clip-text text-transparent 
+         from-gradient2-start via-gradient2-center to-gradient2-end 
+         text-[20px] text-center text-nowrap font-ru-primary font-bold uppercase;
+}
+
+.tools-container-content {
+  @apply grid grid-cols-3 gap-x-[16px] gap-y-[12px] w-full;
+}

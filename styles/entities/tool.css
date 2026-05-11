@@ -1,0 +1,37 @@
+@import 'tailwindcss';
+
+@import "../../app/globals.css";
+
+.tool {
+  @apply grid justify-items-start col-span-1 gap-y-[12px] py-[16px] 
+         px-[18px] bg-gradient-to-r from-gradient-start to-gradient-end 
+         border-[1px] border-transparent rounded-[10px] duration-400 ease-in-out;
+}
+
+.tool:hover {
+  @apply shadow-[0px,6px,8px,gradient2-end] border-[1px] border-gradient2-end;
+}
+
+.tool-top {
+  @apply flex justify-center gap-x-[12px];
+}
+
+.tool-top-title {
+  @apply text-white text-[14px] text-center font-ru-primary font-bold;
+}
+
+.tool-bottom {
+  @apply grid justify-items-start gap-y-[2px] w-full;
+}
+
+.tool-bottom-progress {
+  @apply relative w-full h-[6px] bg-theme rounded-[2.5px] overflow-hidden;
+}
+
+.tool-bottom-progress-percentage {
+  @apply absolute left-0 top-0 w-full h-full bg-linear-to-br from-gradient2-start via-gradient2-center to-gradient2-end;
+}
+
+.tool-bottom-percentage {
+  @apply w-full text-white2 text-[14px] text-right font-ru-primary font-medium brightness-75;
+}
