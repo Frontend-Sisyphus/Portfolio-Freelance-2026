@@ -14,6 +14,12 @@ import ViewProvider from "@/context/ViewProvider";
 
 import "@/app/globals.css";
 
+interface PageParams {
+  params: Promise<{
+    locale: string;
+  }>;
+}
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -24,7 +30,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata({ params }: PageParams) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'metadata' });
 

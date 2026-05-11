@@ -4,13 +4,13 @@ import React, { useEffect, useRef } from 'react';
 import "@/styles/shared/starBackground.css";
 
 export default function StarBackground() {
-  const starsRef = useRef(null);
-  const stars2Ref = useRef(null);
-  const stars3Ref = useRef(null);
+  const starsRef = useRef<HTMLDivElement>(null);
+  const stars2Ref = useRef<HTMLDivElement>(null);
+  const stars3Ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Функция для генерации теней звезд (аналог SCSS функции multiple-box-shadow)
-    const multipleBoxShadow = (n) => {
+    const multipleBoxShadow = (n: number) => {
       let value = `${Math.floor(Math.random() * 2000)}px ${Math.floor(Math.random() * 2000)}px #FFF`;
       for (let i = 2; i <= n; i++) {
         value += `, ${Math.floor(Math.random() * 2000)}px ${Math.floor(Math.random() * 2000)}px #FFF`;

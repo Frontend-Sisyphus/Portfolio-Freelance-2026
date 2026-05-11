@@ -11,7 +11,7 @@ interface WorkPlaceProps {
   companyName: string;
   timeGap: string;
   results: {
-    id: number;
+    id: string;
     text: string;
   }[];
 }

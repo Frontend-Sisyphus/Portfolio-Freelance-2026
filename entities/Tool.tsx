@@ -2,7 +2,13 @@ import React from 'react';
 
 import "@/styles/entities/tool.css";
 
-export default function Tool({title, icon, progress}) {
+interface ToolProps {
+  title: string;
+  icon: React.ReactNode;
+  progress: number;
+}
+
+export default function Tool({title, icon, progress}: ToolProps) {
   return (
     <div className="tool">
       <div className="tool-top">
