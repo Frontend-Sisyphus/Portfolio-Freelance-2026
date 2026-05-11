@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@import "../../app/globals.css";
+
+.contactsForm {
+    @apply relative grid gap-y-[14px] px-[20px] pt-[34px] pb-[20px] w-full bg-gradient-to-r from-gradient-start to-gradient-end rounded-[15px];
+}
+
+.contactsForm-field {
+    @apply grid justify-items-start gap-y-[4px] w-full;
+}
+
+.contactsForm-field > label {
+    @apply text-white2 text-[18px] font-ru-primary font-medium;
+}
+
+.contactsForm-field > input {
+    @apply px-[10px] w-full h-[35px] bg-transparent border-[1px] border-[#576a78] rounded-[7.5px] text-white text-[16px] font-ru-primary;
+}
+
+.contactsForm-field > input:focus {
+    @apply border-[#7b95a8];
+}
+
+.contactsForm-field > textarea {
+    @apply px-[10px] py-[10px] w-full h-[105px] border-[1px] border-[#576a78] rounded-[7.5px] text-white text-[16px] font-ru-primary resize-none;
+}
+
+.contactsForm-field > textarea:focus {
+    @apply border-[#7b95a8];
+}
+
+.contactsForm-sendButton {
+    @apply w-full h-[50px] bg-linear-to-r from-gradient-start to-gradient-end rounded-[10px];
+}
+
+.contactsForm-sendButton-text {
+    @apply text-white text-[18px] font-ru-secondary font-bold uppercase;
+}
+
+.Toastify__toast {
+    @apply !bg-[#0d3151];
+}
+
+.Toastify__progress-bar {
+    @apply bg-[#5e9ecd];
+}
+
+.Toastify__toast-icon > svg {
+    @apply fill-[#5e9ecd];
+}

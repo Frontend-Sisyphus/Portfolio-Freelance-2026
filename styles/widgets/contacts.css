@@ -2,7 +2,7 @@
 @import "../../app/globals.css";
 
 .contacts {
-    @apply grid justify-items-center justify-center gap-y-[12px] px-[15px] py-[30px] w-full;
+    @apply grid gap-y-[12px] px-[15px] py-[30px] w-full;
 
     @media (min-width: 481px) {
         @apply justify-between items-start gap-y-[20px] gap-x-[30px] 
@@ -11,7 +11,7 @@
 }
 
 .contacts-title {
-    @apply col-span-2 text-white text-center text-[24px] font-ru-secondary 
+    @apply col-span-2 text-white text-[24px] font-ru-secondary 
            font-bold uppercase;
 
     @media (min-width: 481px) {

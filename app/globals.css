@@ -67,11 +67,19 @@
 }
 
 body {
-  @apply relative grid justify-items-center min-w-screen min-h-screen bg-theme overflow-x-hidden;
+  @apply relative grid justify-items-center min-w-screen min-h-screen overflow-x-hidden;
 
   @media (max-width: 480px) {
     @apply px-[20px];
   }
+}
+
+body.dark {
+  @apply bg-theme;
+}
+
+body.light {
+  @apply bg-white;
 }
 
 a {

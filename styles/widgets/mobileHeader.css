@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@import "../../app/globals.css";
+
+.mobileHeader {
+    @apply fixed flex justify-between items-center top-[20px] mx-auto py-[15px] px-[20px] w-[calc(100%-40px)] h-[65px] backdrop-blur-md bg-linear-to-r from-gradient-start to-gradient-end rounded-[15px] z-100;
+}
+
+.mobileHeader-logo {
+    @apply w-[32px] h-[43px];
+}
+
+.mobileHeader-menu {
+    @apply fixed flex justify-between items-start top-[105px] mx-auto py-[15px] px-[20px] w-[calc(100%-40px)] h-auto backdrop-blur-md bg-linear-to-r from-gradient-start to-gradient-end rounded-[15px] z-100;
+}
+
+.mobileHeader-nav {
+    @apply grid gap-y-[12px];
+}
+
+.mobileHeader-nav a {
+    @apply px-[5px] text-[16px] font-ru-primary font-medium;
+}
+
+.link-active {
+    @apply text-white;
+}
+
+.link-inactive {
+    @apply text-white2 brightness-60;
+}
+
+.mobileHeader-iconsContainer {
+    @apply grid grid-cols-2 gap-y-[16px] gap-x-[14px];
+}
+
+.mobileHeader-iconsContainer-item {
+    @apply px-[25px] py-[20px] bg-linear-to-r from-[#d9d9d915] to-[#7373731f] backdrop-blur-md rounded-[15px];
+}
+
+.mobileHeader-iconsContainer-item svg {
+    @apply w-[28px] h-[28px];
+}
+
+@media (min-width: 481px) {
+    .mobileHeader {
+        @apply hidden;
+    }
+
+    .mobileHeader-menu {
+        @apply hidden;
+    }
+}
