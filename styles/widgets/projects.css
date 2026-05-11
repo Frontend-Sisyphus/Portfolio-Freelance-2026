@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@import "../../app/globals.css";
+
+.projects {
+    @apply relative grid justify-items-start pb-[100px] w-full h-auto;
+}
+
+.projects-container {
+    @apply relative grid gap-y-[24px] mt-[20px] w-full;
+}
+
+@media (max-width: 480px) {
+    .projects {
+        @apply pb-[80px];
+    }
+
+    .projects-container {
+        @apply mt-[10px];
+    }
+}
+
+@media (max-width: 400px) {
+    .projects {
+        @apply pb-[70px];
+    }
+}
