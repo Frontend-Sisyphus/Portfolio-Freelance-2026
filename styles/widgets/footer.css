@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@import "../../app/globals.css";
+
+.footer {
+    @apply relative flex justify-between items-center mx-auto py-[30px] w-full max-w-[1220px] h-[102px];
+}
+
+.footer-textBlock {
+    @apply flex items-center gap-x-[8px] text-white2 text-[20px] font-ru-primary font-normal uppercase;
+}
+
+.footer-textBlock-copyright {
+    @apply pb-[5px] text-[24px];
+}
+
+.footer-scrollButton {
+    @apply flex items-center gap-x-[8px] px-[5px] py-[2px];
+}
+
+.footer-scrollButton > p {
+    @apply text-white2 text-[16px] text-left font-ru-primary uppercase;
+}
+
+@media (max-width: 480px) {
+    .footer {
+        @apply justify-center h-[72px];
+    }
+
+    .footer-textBlock {
+        @apply flex items-center gap-x-[8px] pb-[4px] text-white2 text-[13px] font-ru-primary font-normal uppercase;
+    }
+
+    .footer-textBlock-copyright {
+        @apply pb-0 text-[20px];
+    }
+
+    .footer-scrollButton {
+        @apply hidden;
+    }
+}
+
+@media (max-width: 400px) {
+    .footer {
+        @apply h-[62px];
+    }
+}
