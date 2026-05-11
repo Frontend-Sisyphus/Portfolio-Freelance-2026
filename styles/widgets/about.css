@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@import "../../app/globals.css";
+
+.about {
+    @apply relative grid justify-items-start pb-[100px] w-full h-auto;
+
+    @media (max-width: 480px) {
+        @apply pb-[80px];
+    }
+
+    @media (max-width: 400px) {
+        @apply pb-[70px];
+    }
+}
+
+.about-info {
+    @apply grid grid-cols-[70%_30%] gap-x-[20px] mt-[20px] w-full h-auto;
+
+    @media (max-width: 480px) {
+        @apply grid-cols-1 gap-y-[30px] mt-[10px];
+    }
+}
+
+.about-info-story {
+    @apply grid gap-y-[34px] text-white text-[24px] font-ru-primary brightness-75;
+
+    @media (max-width: 480px) {
+        @apply grid gap-y-[24px] text-white text-[18px] font-ru-primary brightness-75;
+    }
+
+    @media (max-width: 400px) {
+        @apply text-[16px];
+    }
+}
