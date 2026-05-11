@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@import "../../app/globals.css";
+
+
+.workplace {
+    @apply flex items-start gap-x-[16px] w-full duration-[600ms] ease-in-out;
+}
+
+.workplace-image {
+    @apply w-[70px] h-[70px] rounded-[10px];
+}
+
+.workplace-textContent {
+    @apply grid gap-y-[8px] w-full;
+}
+
+.workplace-textContent-occupation {
+    @apply text-white text-[32px] font-ru-primary font-bold;
+}
+
+.workplace-textContent-company {
+    @apply text-white text-[20px] font-ru-primary font-bold;
+}
+
+.workplace-textContent-timeGap {
+    @apply text-white2 text-[16px] font-ru-primary font-normal brightness-75;
+}
+
+.workplace-textContent-results {
+    @apply grid gap-y-[12px] pl-[22px] text-white text-[16px] font-ru-primary font-normal list-disc;
+}
+
+@media (max-width: 480px) {
+    .workplace-textContent {
+        @apply gap-y-[10px];
+    }
+
+    .workplace-textContent-occupation {
+        @apply text-[24px] leading-[32px];
+    }
+
+    .workplace-textContent-company {
+        @apply text-[16px];
+    }
+
+    .workplace-textContent-timeGap {
+        @apply text-[14px];
+    }
+
+    .workplace-textContent-results {
+        @apply gap-y-[12px] text-[13px];
+    }
+}

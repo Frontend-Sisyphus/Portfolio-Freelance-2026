@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@import "../../app/globals.css";
+
+.work {
+    @apply relative grid justify-items-start pb-[100px] w-full h-auto;
+}
+
+.work-top {
+    @apply flex justify-between items-end w-full h-auto;
+}
+
+.work-top-yearsCount {
+    @apply text-white text-[28px] font-ru-primary font-semibold uppercase brightness-[0.85];
+}
+
+.work-experience {
+    @apply relative flex items-start gap-x-[26px] mt-[20px] w-full;
+}
+
+.work-experience-container {
+    @apply relative grid justify-items-start gap-y-[32px] w-full;
+}
+
+@media (max-width: 480px) {
+    .work {
+        @apply pb-[80px];
+    }
+
+    .work-top-yearsCount {
+        @apply text-[24px];
+    }
+
+    .work-experience {
+        @apply gap-x-[18px];
+    }
+}
+
+@media (max-width: 400px) {
+    .work {
+        @apply pb-[70px];
+    }
+
+    .work-top-yearsCount {
+        @apply text-[20px];
+    }
+}

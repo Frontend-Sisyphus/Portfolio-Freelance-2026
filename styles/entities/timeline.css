@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@import "../../app/globals.css";
+
+.timeline {
+    @apply relative w-[8px] h-full bg-linear-to-b from-white to-transparent rounded-[40px] duration-[600ms] ease-in-out;
+}
+
+.timeline-decorationCircle {
+    @apply absolute left-[-8px] p-[2px] w-[24px] h-[24px] bg-white rounded-full;
+}
+
+.timeline-decorationCircle:first-child {
+    @apply top-[23px];
+}
+
+.timeline-decorationCircle:nth-child(2) {
+    @apply top-[349px];
+}
+
+.timeline-decorationCircle:last-child {
+    @apply top-[712px];
+}
+
+.timeline-decorationCircle-inner {
+    @apply p-[3px] w-[20px] h-[20px] bg-theme rounded-full;
+}
+
+.timeline-decorationCircle-inner-center {
+    @apply w-[14px] h-[14px] bg-white rounded-full;
+}
+
+@media (max-width: 480px) {
+    .timeline-decorationCircle:last-child {
+        @apply top-[456px];
+    }
+}
+
+@media (max-width: 470px) {
+    .timeline-decorationCircle:last-child {
+        @apply top-[496px];
+    }
+}
+
+@media (max-width: 463px) {
+    .timeline-decorationCircle:last-child {
+        @apply top-[514px];
+    }
+}
+
+@media (max-width: 414px) {
+    .timeline-decorationCircle:last-child {
+        @apply top-[534px];
+    }
+}
+
+@media (max-width: 387px) {
+    .timeline-decorationCircle:last-child {
+        @apply top-[554px];
+    }
+}
+
+@media (max-width: 385px) {
+    .timeline-decorationCircle:last-child {
+        @apply top-[592px];
+    }
+}
+
+@media (max-width: 380px) {
+    .timeline-decorationCircle:last-child {
+        @apply top-[612px];
+    }
+}
+
+@media (max-width: 369px) {
+    .timeline-decorationCircle:last-child {
+        @apply top-[630px];
+    }
+}
