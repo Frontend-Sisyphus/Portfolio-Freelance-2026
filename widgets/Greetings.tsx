@@ -1,6 +1,8 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 
+import { useTranslations } from "next-intl";
+
 import { useView } from "@/context/ViewProvider";
 
 import {
@@ -15,12 +17,16 @@ import Typewriter from 'typewriter-effect';
 
 import Link from "next/link";
 
+import { getIntlArray } from "@/utils/generalFunctions";
+
 import { greetingsIcons } from "@/data/greetingsIcons";
 
 import "@/styles/widgets/greetings.css";
 
 const Greetings = () => {
   const { setSectionInView } = useView();
+
+  const t = useTranslations("greetings");
 
   const greetingsRef = useRef(null);
   const imgRef = useRef(null);
@@ -75,7 +81,7 @@ const Greetings = () => {
             transition={{ duration: 0.1, ease: "easeOut" }}
             className="greetings-textBlock-startText"
           >
-            Привет, я
+            {t('startText')}
           </motion.p>
 
           <motion.h1
@@ -83,11 +89,11 @@ const Greetings = () => {
             animate={animateIn1}
             className="greetings-textBlock-title"
           >
-            <b>Борис Карабут</b>
+            <b>{t('title')}</b>
             <br />
             <Typewriter
               options={{
-                strings: ['Frontend-разработчик', 'React-разработчик', 'Основатель стартапов', 'Фрилансер', 'ИИ Энтузиаст'],
+                strings: getIntlArray(t('occupations')),
                 autoStart: true,
                 delay: 70,
                 deleteSpeed: 70,
@@ -101,8 +107,7 @@ const Greetings = () => {
             animate={animateIn2}
             className="greetings-textBlock-description"
           >
-            который работает над созданием быстрых и красивых веб-сайтов и
-            веб-приложений, которые полюбят пользователи.
+            {t('description')}
           </motion.p>
         </span>
 
@@ -114,19 +119,19 @@ const Greetings = () => {
           <div className="greetings-textBlock-statistics-item">
             <p className="greetings-textBlock-statistics-item-number">2+</p>
 
-            <p className="greetings-textBlock-statistics-item-text">года опыта</p>
+            <p className="greetings-textBlock-statistics-item-text">{getIntlArray(t('statisticsText'))[0]}</p>
           </div>
 
           <div className="greetings-textBlock-statistics-item">
             <p className="greetings-textBlock-statistics-item-number">4+</p>
 
-            <p className="greetings-textBlock-statistics-item-text">лет в <br/> программировании</p>
+            <p className="greetings-textBlock-statistics-item-text">{getIntlArray(t('statisticsText'))[1]}</p>
           </div>
 
           <div className="greetings-textBlock-statistics-item">
             <p className="greetings-textBlock-statistics-item-number">7+</p>
 
-            <p className="greetings-textBlock-statistics-item-text">проектов</p>
+            <p className="greetings-textBlock-statistics-item-text">{getIntlArray(t('statisticsText'))[2]}</p>
           </div>
         </motion.div>
 
@@ -154,7 +159,7 @@ const Greetings = () => {
             </svg>
 
             <p className="greetings-textBlock-buttonsContainer-contactButton-text">
-              Связаться со мной
+              {t('contactButtonText')}
             </p>
           </motion.a>
 
@@ -164,7 +169,7 @@ const Greetings = () => {
             className="greetings-textBlock-buttonsContainer-downloadCVButton"
           >
             <p className="greetings-textBlock-buttonsContainer-downloadCVButton-text">
-              Скачать резюме
+              {t('cvButtonText')}
             </p>
           </motion.a>
         </motion.div>

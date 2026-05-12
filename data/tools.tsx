@@ -88,7 +88,7 @@ export const tools = [
               </linearGradient>
             </defs>
           </svg>),
-    progress: 100
+    progress: 70
   },
   {
     id: crypto.randomUUID(),

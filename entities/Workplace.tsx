@@ -1,28 +1,24 @@
 "use client";
 import React, { useRef } from "react";
 
+import { useTranslations } from "next-intl";
+
 import { useInView } from "framer-motion";
 
 import "@/styles/entities/workplace.css";
 
 interface WorkPlaceProps {
   logo: string;
-  occupation: string;
-  companyName: string;
-  timeGap: string;
-  results: {
-    id: string;
-    text: string;
-  }[];
+  index: number;
 }
 
 const Workplace: React.FC<WorkPlaceProps> = ({
   logo,
-  occupation,
-  companyName,
-  timeGap,
-  results,
+  index,
 }) => {
+  const t = useTranslations('work');
+  const workplaces = t.raw('workplaces');
+
   const workplaceRef = useRef(null);
 
   const isInView = useInView(workplaceRef, { once: true });
@@ -34,15 +30,15 @@ const Workplace: React.FC<WorkPlaceProps> = ({
       <img src={logo} alt="" className="workplace-image" />
 
       <div className="workplace-textContent">
-        <h3 className="workplace-textContent-occupation">{occupation}</h3>
+        <h3 className="workplace-textContent-occupation">{workplaces[index].occupation}</h3>
 
-        <h4 className="workplace-textContent-company">{companyName}</h4>
+        <h4 className="workplace-textContent-company">{workplaces[index].companyName}</h4>
 
-        <p className="workplace-textContent-timeGap">{timeGap}</p>
+        <p className="workplace-textContent-timeGap">{workplaces[index].timeGap}</p>
 
         <ul className="workplace-textContent-results">
-          {results.map((result) => (
-            <li key={result.id}>{result.text}</li>
+          {workplaces[index].results.map((result: string) => (
+            <li key={crypto.randomUUID()}>{result}</li>
           ))}
         </ul>
       </div>

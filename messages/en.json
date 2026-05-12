@@ -4,22 +4,27 @@
     "description": "Frontend freelancer: responsive web dev, full project delivery. Browse portfolio →"
   },
   "header": {
-    "links": ["Home","Work","Projects","About","Contacts"]
+    "links": "[\"Home\",\"About\",\"Work and education\",\"Tools\",\"Projects\",\"Contacts\"]"
   },
   "footer": {
     "copyright": "/ Boris Karabut / ALL RIGHTS RESERVED",
     "buttonText": "Scroll to top"
   },
   "greetings": {
-    "startText": "Hey, there",
-    "title1": "I'm ",
-    "title2": "Boris Karabut",
-    "title3": "a Frontend developer",
-    "description": "who works across the stack to deliver fast and beautiful websites and web apps that user will love",
-    "buttonText": "Contact me"
+    "startText": "Hey, there I'm",
+    "title": "Boris Karabut",
+    "occupations": "[\"Frontend developer\",\"React developer\",\"Startup founder\",\"Freelancer\",\"AI enthusiast\"]",
+    "description": "who works across the stack to deliver fast and beautiful websites and web apps that user will love.",
+    "statisticsText": "[\"years experience\",\"years in programming\",\"projects\"]",
+    "contactButtonText": "Contact me",
+    "cvButtonText": "Download CV"
+  },
+  "about": {
+    "title": "I make beautiful and fast UI's",
+    "paragraphs": "[\"My passion is to create modern and fast products that promote business growth. I like to contribute to their improvement so that both the business and the end user are satisfied with the result.\",\"From writing my first lines of code back in late 2021 to this point I have been constantly improving my development and architecture skills, improving the final product in the form of an UI/UX as I work and solving complicated tasks that become more complex and complicated over time to ensure growth in my field.\",\"Each task is unique, so I learn and develop in each of them in order not only to give my best, but also to offer solutions that improve the final product.\"]"
   },
   "work": {
-    "title": "Work experience",
+    "title": "Experience and education",
     "yearsCount": "2 years",
     "workplaces": [{
       "occupation": "Middle Frontend developer",
@@ -31,17 +36,35 @@
       "companyName": "AHISS",
       "timeGap": "May 2023 - Apr 2024",
       "results": ["Launched a website of the most popular cybersecurity competition in the Russian Federation (CTF Cup)","Launched a website for the sale of merch for participants of CTF competitions and events.","Migrated one of the projects from Vue to React.","Optimized existing projects.","Estimated task deadlines.","Close interacted with all team members (from the designer to the information security specialist)."]
+    },
+    {
+      "occupation": "Development of web and multimedia applications",
+      "companyName": "College of Computer Science and Programming of the Financial University",
+      "timeGap": "September 2021 - June 2025",
+      "results": ["The foundation laid during my studies allowed me to form a systematic mindset and master the full cycle of creating modern web applications.","Graduated with the highest score and the best graduation project of the course.","Became the head of the frontend direction of the student IT community"]
     }]
+  },
+  "tools": {
+    "title": "Tools",
+    "blockTitles": "[\"Languages\",\"Frameworks and libraries\",\"State management\",\"Styling\",\"Applications\"]",
+    "classNames": "[\"Expert\",\"Advanced\",\"Intermediate\",\"Beginner\"]"
   },
   "projects": {
     "title": "Projects"
   },
-  "about": {
-    "title": "I make beautiful and fast UI's",
-    "paragraphs": ["My passion is to create modern and fast products that promote business growth. I like to contribute to their improvement so that both the business and the end user are satisfied with the result.","From writing my first lines of code back in late 2021 to this point I have been constantly improving my development and architecture skills, improving the final product in the form of an UI/UX as I work and solving complicated tasks that become more complex and complicated over time to ensure growth in my field.","Each task is unique, so I learn and develop in each of them in order not only to give my best, but also to offer solutions that improve the final product. Do you want to know more? Here is"]
-  },
   "contacts": {
-    "title": "Want to hire me?",
-    "buttonText": "Contact me"
+    "title": "Get in touch",
+    "connectInfoTitle": "Let's connect",
+    "connectInfoDescription": "I'm currently open to new opportunities. Whether you have a question, a project idea, or just want to say hi — feel free to reach out!",
+    "pointsText": "[\"Available for freelance & full-time roles\",\"Usually responds within 24 hours\",\"Russia, Moscow\"]",
+    "copyButtonText": "Copy"
+  },
+  "contactsForm": {
+    "labels": "[\"Name / Organisation\",\"Email\",\"Message\"]",
+    "errorTexts": "[\"Enter your name or organisation\",\"Enter your email\",\"I will be pleased to read what you have to say.\"]",
+    "patternTexts": "[\"Enter correct name or organisation\",\"Enter correct email\"]",
+    "buttonText": "Send",
+    "toastSuccessText": "Email has been sent",
+    "toastErrorText": "Email has not been sent, check the connection."
   }
 }

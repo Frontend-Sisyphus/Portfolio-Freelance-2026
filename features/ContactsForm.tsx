@@ -1,9 +1,13 @@
 "use client";
 import React, { useRef } from "react";
 
+import { useTranslations } from "next-intl";
+
 import { useForm } from "react-hook-form";
 
 import emailjs from "@emailjs/browser";
+
+import { getIntlArray } from "@/utils/generalFunctions";
 
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -12,6 +16,8 @@ import { toast, ToastContainer } from "react-toastify";
 import "@/styles/features/contactsForm.css";
 
 const ContactsForm = () => {
+  const t = useTranslations('contactsForm');
+
   const formRef = useRef<HTMLFormElement>(null);
 
   const { formState, register, handleSubmit, reset } = useForm();
@@ -31,7 +37,7 @@ const ContactsForm = () => {
         () => {
           console.debug("Успешная отправка письма");
 
-          toast.success("Письмо отправлено", {
+          toast.success(t('toastSuccessText'), {
             position: "bottom-left",
             autoClose: 3000,
             hideProgressBar: false,
@@ -48,7 +54,7 @@ const ContactsForm = () => {
         (error) => {
           console.debug("Неудачная отправка письма", error.text);
 
-          toast.error("Письмо не отправлено, проверьте соединение", {
+          toast.error(t('toastErrorText'), {
             position: "bottom-left",
             autoClose: 3000,
             hideProgressBar: false,
@@ -74,18 +80,18 @@ const ContactsForm = () => {
           className="contactsForm"
         >
           <div className="contactsForm-field">
-            <label>Имя / Организация</label>
+            <label>{getIntlArray(t('labels'))[0]}</label>
 
             <input
               id="name"
               type="text"
               autoComplete="off"
               {...register("name", {
-                required: "Введите ваше имя или организация",
+                required: getIntlArray(t('errorTexts'))[0],
                 pattern: {
                   value: /^[a-zA-Zа-яА-ЯёЁ][a-zA-Z0-9а-яА-ЯёЁ]{2,}/,
                   message:
-                    "Пожалуйста введите правильное имя или организацию.",
+                    getIntlArray(t('patternTexts'))[0],
                 },
               })}
             />
@@ -98,17 +104,17 @@ const ContactsForm = () => {
           </div>
 
           <div className="contactsForm-field">
-            <label>Почта</label>
+            <label>{getIntlArray(t('labels'))[1]}</label>
 
             <input
               id="email"
               type="email"
               autoComplete="off"
               {...register("email", {
-                required: "Введите ваш почтовый адрес",
+                required: getIntlArray(t('errorTexts'))[1],
                 pattern: {
                   value: /\S+@\S+\.\S+/,
-                  message: "Пожалуйста введите правильный почтовый адрес",
+                  message: getIntlArray(t('patternTexts'))[1],
                 },
               })}
             />
@@ -121,13 +127,13 @@ const ContactsForm = () => {
           </div>
 
           <div className="contactsForm-field">
-            <label>Сообщение</label>
+            <label>{getIntlArray(t('labels'))[2]}</label>
 
             <textarea
               id="message"
               {...register("message", {
                 required:
-                  "Мне будет приятно прочитать то, что вы хотите сказать.",
+                  getIntlArray(t('errorTexts'))[2],
               })}
             />
 
@@ -143,7 +149,7 @@ const ContactsForm = () => {
             data-blobity-radius="10"
             className="contactsForm-sendButton"
           >
-            <p className="contactsForm-sendButton-text">Отправить</p>
+            <p className="contactsForm-sendButton-text">{t('buttonText')}</p>
           </button>
         </motion.form>
       </AnimatePresence>

@@ -1,6 +1,8 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 
+import { useTranslations } from "next-intl";
+
 import { useInView } from "framer-motion";
 
 import { useView } from "@/context/ViewProvider";
@@ -14,6 +16,8 @@ import AnimatedTitle from "@/shared/AnimatedTitle";
 import "@/styles/widgets/projects.css";
 
 const Projects = () => {
+  const t = useTranslations('projects');
+
   const { setSectionInView } = useView();
 
   const projectsRef = useRef(null);
@@ -29,7 +33,7 @@ const Projects = () => {
     <section id="projects" ref={projectsRef} className="projects">
       <AnimatedTitle
         type={2}
-        text="Проекты"
+        text={t('title')}
         className="sectionTitle"
         wordSpace="mr-[14px]"
         charSpace="mr-[0.5px]"

@@ -1,9 +1,13 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 
+import { useTranslations } from "next-intl";
+
 import { useInView } from "framer-motion";
 
 import { useView } from "@/context/ViewProvider";
+
+import { getIntlArray } from "@/utils/generalFunctions";
 
 import { greetingsIcons } from "@/data/greetingsIcons";
 
@@ -20,6 +24,8 @@ import AnimatedTitle from "@/shared/AnimatedTitle";
 import "@/styles/widgets/contacts.css";
 
 const Contacts = () => {
+  const t = useTranslations('contacts');
+
   const { setSectionInView } = useView();
 
   const contactsRef = useRef(null);
@@ -44,7 +50,7 @@ const Contacts = () => {
       <section id="contacts" ref={contactsRef} className="contacts">
         <AnimatedTitle
           type={3}
-          text="Хотите связаться со мной?"
+          text={t('title')}
           className="contacts-title"
           wordSpace="mr-[12px]"
           charSpace="mr-[0.5px]"
@@ -60,31 +66,29 @@ const Contacts = () => {
             exit={{ opacity: 0 }}
             className="contacts-connectInfo"
           >
-            <h4 className="contacts-connectInfo-title">Буду рад с вами пообщаться</h4>
+            <h4 className="contacts-connectInfo-title">{t('connectInfoTitle')}</h4>
 
             <p className="contacts-connectInfo-description">
-              В настоящий момент я открыт для новых возможностей. Если у вас есть вопрос, 
-              идея проекта или просто хотите поздороваться — не стесняйтесь обращаться ко 
-              мне
+              {t('connectInfoDescription')}
             </p>
 
             <div className="contacts-connectInfo-points">
               <div className="contacts-connectInfo-points-item">
                 <Briefcase size={24} color="#FFFFFF" strokeWidth={1.5} />
 
-                <p className="contacts-connectInfo-points-item-text">Доступен для работы на фрилансе и полного рабочего дня</p>
+                <p className="contacts-connectInfo-points-item-text">{getIntlArray(t('pointsText'))[0]}</p>
               </div>
 
               <div className="contacts-connectInfo-points-item">
                 <Clock size={24} color="#FFFFFF" strokeWidth={1.5} />
 
-                <p className="contacts-connectInfo-points-item-text">Обычно отвечаю в течении одного дня</p>
+                <p className="contacts-connectInfo-points-item-text">{getIntlArray(t('pointsText'))[1]}</p>
               </div>
 
               <div className="contacts-connectInfo-points-item">
                 <Compass size={24} color="#FFFFFF" strokeWidth={1.5} />
 
-                <p className="contacts-connectInfo-points-item-text">Россия, Москва</p>
+                <p className="contacts-connectInfo-points-item-text">{getIntlArray(t('pointsText'))[2]}</p>
               </div>
             </div>
 
@@ -102,7 +106,7 @@ const Contacts = () => {
                 >
                   <Copy size={18} color="#FFFFFF" strokeWidth={1.5} />
 
-                  <p>Скопировать</p>
+                  <p>{t('copyButtonText')}</p>
                 </button>
               </div>
             </div>

@@ -1,9 +1,13 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 
+import { useTranslations } from "next-intl";
+
 import { useInView } from "framer-motion";
 
 import { useView } from "@/context/ViewProvider";
+
+import { getIntlArray } from "@/utils/generalFunctions";
 
 import { aboutParagraphs } from "@/data/aboutParagraphs";
 
@@ -13,6 +17,7 @@ import AnimatedParagraph from "@/shared/AnimatedParagraph";
 import "@/styles/widgets/about.css";
 
 const About = () => {
+  const t = useTranslations('about');
   const { setSectionInView } = useView();
 
   const aboutRef = useRef(null);
@@ -28,7 +33,7 @@ const About = () => {
     <section id="about" ref={aboutRef} className="about">
       <AnimatedTitle
         type={2}
-        text="Я делаю красивые и быстрые интерфейсы"
+        text={t('title')}
         className="sectionTitle"
         wordSpace="mr-[14px]"
         charSpace="mr-[0.5px]"
@@ -36,9 +41,9 @@ const About = () => {
 
       <div className="about-info">
         <div className="about-info-story">
-          {aboutParagraphs.map((paragraph) => (
+          {aboutParagraphs.map((paragraph, index) => (
             <AnimatedParagraph key={paragraph.id}>
-              {paragraph.text}
+              {getIntlArray(t('paragraphs'))[index]}
             </AnimatedParagraph>
           ))}
         </div>

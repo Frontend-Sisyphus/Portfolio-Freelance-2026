@@ -1,3 +1,8 @@
+"use client";
+import { useTranslations } from 'next-intl';
+
+import { getIntlArray } from '@/utils/generalFunctions';
+
 import { tools } from '@/data/tools';
 
 import Tool from '@/entities/Tool';
@@ -7,11 +12,13 @@ import AnimatedTitle from '@/shared/AnimatedTitle';
 import '@/styles/widgets/tools.css';
 
 export default function Tools() {
+  const t = useTranslations('tools');
+
   return (
-    <section className="tools">
+    <section id="tools" className="tools">
       <AnimatedTitle
         type={2}
-        text="Инструменты"
+        text={t('title')}
         className="sectionTitle"
         wordSpace="mr-[14px]"
         charSpace="mr-[0.5px]"
@@ -21,7 +28,7 @@ export default function Tools() {
         <div className="tools-container-top">
           <hr/>
 
-          <h4 className="tools-container-top-title">Языки программирования</h4>
+          <h4 className="tools-container-top-title">{getIntlArray(t('blockTitles'))[0]}</h4>
 
           <hr/>
         </div>
@@ -40,7 +47,7 @@ export default function Tools() {
         <div className="tools-container-top">
           <hr/>
 
-          <h4 className="tools-container-top-title">Фреймворки и библиотеки</h4>
+          <h4 className="tools-container-top-title">{getIntlArray(t('blockTitles'))[1]}</h4>
 
           <hr/>
         </div>
@@ -59,7 +66,7 @@ export default function Tools() {
         <div className="tools-container-top">
           <hr/>
 
-          <h4 className="tools-container-top-title">Управление состоянием</h4>
+          <h4 className="tools-container-top-title">{getIntlArray(t('blockTitles'))[2]}</h4>
 
           <hr/>
         </div>
@@ -78,7 +85,7 @@ export default function Tools() {
         <div className="tools-container-top">
           <hr/>
 
-          <h4 className="tools-container-top-title">Стилизация</h4>
+          <h4 className="tools-container-top-title">{getIntlArray(t('blockTitles'))[3]}</h4>
 
           <hr/>
         </div>
@@ -97,7 +104,7 @@ export default function Tools() {
         <div className="tools-container-top">
           <hr/>
 
-          <h4 className="tools-container-top-title">Приложения</h4>
+          <h4 className="tools-container-top-title">{getIntlArray(t('blockTitles'))[4]}</h4>
 
           <hr/>
         </div>

@@ -20,6 +20,22 @@
   @apply text-white text-[14px] text-center font-ru-primary font-bold;
 }
 
+.tool-top-right {
+  @apply grid gap-y-[4px];
+}
+
+.tool-top-right-class {
+  @apply flex items-center gap-x-[8px];
+}
+
+.tool-top-right-class-circle {
+  @apply w-[8px] h-[8px] rounded-full;
+}
+
+.tool-top-right-class-title {
+  @apply text-[14px] font-ru-primary font-medium;
+}
+
 .tool-bottom {
   @apply grid justify-items-start gap-y-[2px] w-full;
 }

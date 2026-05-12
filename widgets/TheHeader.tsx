@@ -5,11 +5,13 @@ import { AnimatePresence, useScroll, motion } from "motion/react";
 
 import { useTheme } from "next-themes";
 
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 import { useSearchParams } from 'next/navigation';
 
 import { useView } from "@/context/ViewProvider";
+
+import { getIntlArray } from '@/utils/generalFunctions';
 
 import { headerTextLinks } from "@/data/headerTextLinks";
 
@@ -22,6 +24,8 @@ import "@/styles/widgets/header.css";
 
 const Header = () => {
   const { sectionInView } = useView();
+
+  const t = useTranslations('header');
 
   const { theme, setTheme } = useTheme();
 
@@ -52,7 +56,7 @@ const Header = () => {
 
       <div className="header-right">
         <nav className="header-right-nav">
-          {headerTextLinks.map((textLink) => (
+          {headerTextLinks.map((textLink, index) => (
             <Link
               key={textLink.id}
               href={textLink.path}
@@ -63,7 +67,7 @@ const Header = () => {
                   : "link-inactive"
               }
             >
-              {textLink.label}
+              {getIntlArray(t('links'))[index]}
             </Link>
           ))}
         </nav>
