@@ -47,11 +47,7 @@
     @apply mt-[-5px] text-[58px] font-ru-primary font-bold leading-[68px];
 
     @media (max-width: 480px) {
-        @apply mt-[10px] text-[32px] leading-[46px];
-    }
-
-    @media (max-width: 400px) {
-        @apply text-[30px] leading-[42px];
+        @apply mt-[10px] text-[28px] leading-[40px];
     }
 }
 
