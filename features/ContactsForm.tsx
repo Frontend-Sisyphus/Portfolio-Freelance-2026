@@ -1,6 +1,8 @@
 "use client";
 import React, { useRef } from "react";
 
+import { useTheme } from "next-themes";
+
 import { useTranslations } from "next-intl";
 
 import { useForm } from "react-hook-form";
@@ -16,6 +18,8 @@ import { toast, ToastContainer } from "react-toastify";
 import "@/styles/features/contactsForm.css";
 
 const ContactsForm = () => {
+  const { theme } = useTheme();
+
   const t = useTranslations('contactsForm');
 
   const formRef = useRef<HTMLFormElement>(null);
@@ -147,6 +151,7 @@ const ContactsForm = () => {
           <button
             data-blobity-magnetic="false"
             data-blobity-radius="10"
+            style={{ backgroundColor: theme === "dark" ? "bg-linear-to-r from-gradient-start to-gradient-end" : "#1d1df" }}
             className="contactsForm-sendButton"
           >
             <p className="contactsForm-sendButton-text">{t('buttonText')}</p>

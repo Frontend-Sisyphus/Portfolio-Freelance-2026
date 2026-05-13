@@ -16,12 +16,12 @@
   @apply flex justify-center gap-x-[12px];
 }
 
-.tool-top-title {
-  @apply text-white text-[14px] text-center font-ru-primary font-bold;
-}
-
 .tool-top-right {
   @apply grid gap-y-[4px];
+}
+
+.tool-top-right-title {
+  @apply text-white text-[14px] font-ru-primary font-bold;
 }
 
 .tool-top-right-class {
@@ -41,7 +41,7 @@
 }
 
 .tool-bottom-progress {
-  @apply relative w-full h-[6px] bg-theme rounded-[2.5px] overflow-hidden;
+  @apply relative w-full h-[6px] bg-white2 dark:bg-theme rounded-[2.5px] overflow-hidden;
 }
 
 .tool-bottom-progress-percentage {

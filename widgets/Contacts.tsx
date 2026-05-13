@@ -1,6 +1,8 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 
+import { useTheme } from "next-themes";
+
 import { useTranslations } from "next-intl";
 
 import { useInView } from "framer-motion";
@@ -24,6 +26,8 @@ import AnimatedTitle from "@/shared/AnimatedTitle";
 import "@/styles/widgets/contacts.css";
 
 const Contacts = () => {
+  const { theme } = useTheme();
+
   const t = useTranslations('contacts');
 
   const { setSectionInView } = useView();
@@ -74,19 +78,19 @@ const Contacts = () => {
 
             <div className="contacts-connectInfo-points">
               <div className="contacts-connectInfo-points-item">
-                <Briefcase size={24} color="#FFFFFF" strokeWidth={1.5} />
+                <Briefcase size={24} stroke="#ffffff" strokeWidth={1.5} />
 
                 <p className="contacts-connectInfo-points-item-text">{getIntlArray(t('pointsText'))[0]}</p>
               </div>
 
               <div className="contacts-connectInfo-points-item">
-                <Clock size={24} color="#FFFFFF" strokeWidth={1.5} />
+                <Clock size={24} stroke="#ffffff" strokeWidth={1.5} />
 
                 <p className="contacts-connectInfo-points-item-text">{getIntlArray(t('pointsText'))[1]}</p>
               </div>
 
               <div className="contacts-connectInfo-points-item">
-                <Compass size={24} color="#FFFFFF" strokeWidth={1.5} />
+                <Compass size={24} stroke="#ffffff" strokeWidth={1.5} />
 
                 <p className="contacts-connectInfo-points-item-text">{getIntlArray(t('pointsText'))[2]}</p>
               </div>
@@ -104,7 +108,7 @@ const Contacts = () => {
                   onClick={() => copyToClipboard("b03246599@gmail.com")}
                   className="contacts-connectInfo-email-content-button"
                 >
-                  <Copy size={18} color="#FFFFFF" strokeWidth={1.5} />
+                  <Copy size={18} stroke="#ffffff" strokeWidth={1.5} />
 
                   <p>{t('copyButtonText')}</p>
                 </button>

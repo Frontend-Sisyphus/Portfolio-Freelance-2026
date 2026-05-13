@@ -55,15 +55,19 @@
 
 .header-right-toggleThemeButton {
     @apply relative flex justify-center items-center w-[32px] h-[32px] 
-           border-[1px] border-white rounded-[7.5px] overflow-hidden;
+           border-white border-[1px] rounded-[7.5px] overflow-hidden;
 }
 
 .header-right-toggleThemeButton-iconWrapper {
     @apply absolute;
 }
 
+.header-right-toggleThemeButton-iconWrapper svg {
+    @apply stroke-white;
+}
+
 .header-right-languageToggler {
-    @apply relative inline-block w-[60px] h-[32px] border-[1px] border-white rounded-[7.5px];
+    @apply relative inline-block w-[60px] h-[32px] border-white border-[1px] rounded-[7.5px];
 }
 
 .header-right-languageToggler input {
@@ -80,8 +84,8 @@
 }
 
 .header-right-languageToggler-slider:before {
-    @apply absolute content-[''] top-[4px] left-[4px] w-[22px] h-[22px] 
-           bg-[#ffffff] rounded-[5px] cursor-pointer;
+    @apply absolute content-[''] top-[4px] left-[4px] w-[22px] h-[22px] bg-white
+           rounded-[5px] cursor-pointer;
 }
 
 .header-right-languageToggler-ru,
@@ -102,5 +106,5 @@
 }
 
 .lang-inactive {
-    @apply text-white
+    @apply text-white;
 }

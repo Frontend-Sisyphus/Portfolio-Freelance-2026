@@ -11,8 +11,7 @@
 }
 
 .contacts-title {
-    @apply col-span-2 text-white text-[24px] font-ru-secondary 
-           font-bold uppercase;
+    @apply col-span-2 text-white text-[24px] font-ru-secondary font-bold uppercase;
 
     @media (min-width: 481px) {
         @apply text-left text-[42px];
@@ -31,7 +30,7 @@
     @apply font-ru-primary;
 }
 
-.contacts-connectInfo-title {
+.contacts-connectInfo-title {   
     @apply text-white2 text-[18px] font-bold;
 }
 
@@ -70,7 +69,7 @@
 }
 
 .contacts-connectInfo-email {
-    @apply grid gap-y-[8px] py-[12px] w-full border-y-[1px] border-[#576a78];
+    @apply grid gap-y-[8px] py-[12px] w-full border-[#576a78] border-y-[1px];
 }
 
 .contacts-connectInfo-email-content {
@@ -79,7 +78,7 @@
 
 .contacts-connectInfo-email-content-button {
     @apply flex justify-center items-center gap-x-[8px] px-[10px] py-[4px] 
-           h-[32px] bg-theme border-[1px] border-white rounded-[7.5px];
+           h-[32px] bg-light-theme dark:bg-theme border-white border-[1px] rounded-[7.5px];
 }
 
 .contacts-connectInfo-email-content-button > p {

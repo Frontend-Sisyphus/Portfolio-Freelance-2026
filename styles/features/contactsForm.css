@@ -3,7 +3,8 @@
 @import "../../app/globals.css";
 
 .contactsForm {
-    @apply relative grid gap-y-[14px] px-[20px] pt-[34px] pb-[20px] w-full bg-gradient-to-r from-gradient-start to-gradient-end rounded-[15px];
+    @apply relative grid gap-y-[14px] px-[20px] pt-[34px] pb-[20px] w-full 
+           bg-gradient-to-r from-gradient-start to-gradient-end rounded-[15px];
 }
 
 .contactsForm-field {
@@ -15,7 +16,8 @@
 }
 
 .contactsForm-field > input {
-    @apply px-[10px] w-full h-[35px] bg-transparent border-[1px] border-[#576a78] rounded-[7.5px] text-white text-[16px] font-ru-primary;
+    @apply px-[10px] w-full h-[35px] bg-transparent border-[#576a78] border-[1px] 
+           rounded-[7.5px] text-white text-[16px] font-ru-primary;
 }
 
 .contactsForm-field > input:focus {
@@ -23,7 +25,8 @@
 }
 
 .contactsForm-field > textarea {
-    @apply px-[10px] py-[10px] w-full h-[105px] border-[1px] border-[#576a78] rounded-[7.5px] text-white text-[16px] font-ru-primary resize-none;
+    @apply px-[10px] py-[10px] w-full h-[105px] border-[#576a78] border-[1px] 
+           rounded-[7.5px] text-white text-[16px] font-ru-primary resize-none;
 }
 
 .contactsForm-field > textarea:focus {
@@ -35,7 +38,8 @@
 }
 
 .contactsForm-sendButton-text {
-    @apply text-white text-[18px] font-ru-secondary font-bold uppercase;
+    @apply text-[18px] text-white font-ru-secondary 
+           font-bold uppercase;
 }
 
 .Toastify__toast {

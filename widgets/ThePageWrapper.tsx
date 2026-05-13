@@ -6,8 +6,6 @@ import Footer from "@/widgets/TheFooter";
 
 import Cursor from "@/entities/Cursor";
 
-import StarBackground from "@/shared/StarBackground";
-
 const ThePageWrapper: React.FC<{ children: any }> = ({ children }) => {
   return (
     <>
@@ -20,8 +18,6 @@ const ThePageWrapper: React.FC<{ children: any }> = ({ children }) => {
       {children}
 
       <Footer />
-
-      <StarBackground/>
     </>
   );
 };

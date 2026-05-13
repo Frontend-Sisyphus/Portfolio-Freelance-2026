@@ -26,7 +26,7 @@
     @apply grid gap-y-[34px] text-white text-[24px] font-ru-primary brightness-75;
 
     @media (max-width: 480px) {
-        @apply grid gap-y-[24px] text-white text-[18px] font-ru-primary brightness-75;
+        @apply gap-y-[24px] text-[18px];
     }
 
     @media (max-width: 400px) {

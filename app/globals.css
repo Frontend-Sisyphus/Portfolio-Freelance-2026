@@ -22,11 +22,13 @@
 
 :root {
   --color-theme: #080808;
+  --color-light-theme: #0d253c;
 
   --color-white: #ffffff;
   --color-white2: #e4e9ff;
 
   --color-black: #0d0d0e;
+  --color-black2: #1d1d1f;
 
   --color-gradient-start: #7676761f;
   --color-gradient-end: #808c9d1f;
@@ -41,13 +43,15 @@
   --font-ru-secondary: "Play";
 }
 
-@theme inline {
+@theme {
   --color-theme: var(--color-theme);
+  --color-light-theme: #0d253c;
 
   --color-white: var(--color-white);
   --color-white2: var(--color-white2);
 
   --color-black: var(--color-black);
+  --color-black2: #1d1d1f;
 
   --color-gradient-start: var(--color-gradient-start);
   --color-gradient-end: var(--color-gradient-end);
@@ -67,19 +71,11 @@
 }
 
 body {
-  @apply relative grid justify-items-center min-w-screen min-h-screen overflow-x-hidden;
+  @apply relative grid justify-items-center min-w-screen min-h-screen bg-light-theme dark:bg-theme overflow-x-hidden;
 
   @media (max-width: 480px) {
     @apply px-[20px];
   }
-}
-
-body.dark {
-  @apply bg-theme;
-}
-
-body.light {
-  @apply bg-white;
 }
 
 a {
@@ -125,3 +121,5 @@ button {
     @apply grid;
   }
 }
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));

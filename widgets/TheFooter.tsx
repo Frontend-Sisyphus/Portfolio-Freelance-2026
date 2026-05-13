@@ -1,14 +1,10 @@
 "use client";
-import React, { useState } from "react";
-
 import { useTranslations } from "next-intl";
 
 import "@/styles/widgets/footer.css";
 
 const Footer = () => {
   const t = useTranslations('footer');
-
-  const [currentDate, setCurrentDate] = useState(new Date());
 
   const scrollToTop = () => {
     window.scrollTo(0, 0);
@@ -18,7 +14,7 @@ const Footer = () => {
     <footer className="footer">
       <span className="footer-textBlock">
         <p className="footer-textBlock-copyright">&copy;</p>{" "}
-        {currentDate.getFullYear()} {t('copyright')}
+        {new Date().getFullYear()} {t('copyright')}
       </span>
 
       <button
@@ -35,7 +31,7 @@ const Footer = () => {
         >
           <path
             d="M11.061 0 2.72 8.342a1.77 1.77 0 0 0 0 2.506 1.77 1.77 0 0 0 2.506 0l4.063-4.064v13.444a1.772 1.772 0 1 0 3.545 0V6.784l4.063 4.064a1.77 1.77 0 0 0 2.506-.001 1.77 1.77 0 0 0 0-2.505z"
-            fill="#e4e9ff"
+            fill="#ffffff"
           />
         </svg>
 

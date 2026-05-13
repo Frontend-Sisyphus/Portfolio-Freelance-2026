@@ -3,11 +3,27 @@
 @import "../../app/globals.css";
 
 .timeline {
-    @apply relative w-[8px] h-full bg-linear-to-b from-white to-transparent rounded-[40px] duration-[600ms] ease-in-out;
+    @apply relative w-[8px] h-full bg-linear-to-b rounded-[40px] duration-[600ms] ease-in-out;
+}
+
+.timeline.dark {
+    @apply from-white to-transparent;
+}
+
+.timeline.light {
+    @apply from-black2 to-transparent;
 }
 
 .timeline-decorationCircle {
-    @apply absolute left-[-8px] p-[2px] w-[24px] h-[24px] bg-white rounded-full;
+    @apply absolute left-[-8px] p-[2px] w-[24px] h-[24px] rounded-full;
+}
+
+.timeline-decorationCircle.dark {
+    @apply bg-white;
+}
+
+.timeline-decorationCircle.light {
+    @apply bg-black2;
 }
 
 .timeline-decorationCircle:first-child {
@@ -23,11 +39,27 @@
 }
 
 .timeline-decorationCircle-inner {
-    @apply p-[3px] w-[20px] h-[20px] bg-theme rounded-full;
+    @apply p-[3px] w-[20px] h-[20px] rounded-full;
+}
+
+.timeline-decorationCircle-inner.dark {
+    @apply bg-theme; 
+}
+
+.timeline-decorationCircle-inner.light {
+    @apply bg-black2;
 }
 
 .timeline-decorationCircle-inner-center {
-    @apply w-[14px] h-[14px] bg-white rounded-full;
+    @apply w-[14px] h-[14px] rounded-full;
+}
+
+.timeline-decorationCircle-inner-center.dark {
+    @apply bg-white;
+}
+
+.timeline-decorationCircle-inner-center.light {
+    @apply bg-black2;
 }
 
 @media (max-width: 480px) {

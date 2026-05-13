@@ -60,7 +60,7 @@
            via-gradient2-center to-gradient2-end font-bold;
 }
 
-.greetings-textBlock-title > b:last-child {
+.greetings-textBlock-title > .Typewriter {
     @apply text-white font-bold;
 }
 
@@ -90,7 +90,7 @@
 }
 
 .greetings-textBlock-statistics-item:nth-child(2) {
-    @apply px-[30px] border-x-[1px] border-[#424346];
+    @apply px-[30px] border-[#424346] border-x-[1px];
 }
 
 .greetings-textBlock-statistics-item:last-child {
@@ -111,12 +111,16 @@
 }
 
 .greetings-textBlock-buttonsContainer-contactButton {
-    @apply flex items-center gap-x-[12px] px-[15px] py-[10px] w-[254px] 
-           bg-white rounded-[10px];
+    @apply flex items-center gap-x-[12px] px-[15px] py-[10px] w-[254px] bg-white
+           rounded-[10px];
 
     @media (max-width: 480px) {
         @apply mt-[34px];
     }
+}
+
+.greetings-textBlock-buttonsContainer-contactButton path {
+    @apply fill-[#0d0d0e];
 }
 
 .greetings-textBlock-buttonsContainer-contactButton-text {
@@ -125,7 +129,7 @@
 
 .greetings-textBlock-buttonsContainer-downloadCVButton {
     @apply flex justify-center items-center px-[15px] py-[10px] w-[220px] 
-           bg-transparent border-[1px] border-white rounded-[10px];
+           bg-transparent border-white border-[1px] rounded-[10px];
 }
 
 .greetings-textBlock-buttonsContainer-downloadCVButton-text {
@@ -140,6 +144,10 @@
     @apply flex justify-center items-center w-[42px] h-[42px] 
            bg-linear-to-r from-gradient-start to-gradient-end 
            backdrop-blur-md rounded-[10px];
+}
+
+.greetings-textBlock-iconsContainer-icon path {
+    @apply stroke-white;
 }
 
 .greetings-portrait {

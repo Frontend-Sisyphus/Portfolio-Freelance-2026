@@ -7,7 +7,8 @@
 }
 
 .footer-textBlock {
-    @apply flex items-center gap-x-[8px] text-white2 text-[20px] font-ru-primary font-normal uppercase;
+    @apply flex items-center gap-x-[8px] text-white2 text-[20px] 
+           font-ru-primary font-normal uppercase;
 }
 
 .footer-textBlock-copyright {
@@ -28,7 +29,7 @@
     }
 
     .footer-textBlock {
-        @apply flex items-center gap-x-[8px] pb-[4px] text-white2 text-[13px] font-ru-primary font-normal uppercase;
+        @apply flex items-center gap-x-[8px] pb-[4px] text-[13px] font-ru-primary font-normal uppercase;
     }
 
     .footer-textBlock-copyright {
