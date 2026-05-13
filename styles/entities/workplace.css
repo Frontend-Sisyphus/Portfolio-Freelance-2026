@@ -4,27 +4,51 @@
 
 
 .workplace {
-    @apply flex items-start gap-x-[16px] w-full duration-[600ms] ease-in-out;
+    @apply grid w-full duration-[600ms] ease-in-out;
 }
 
-.workplace-image {
+.workplace-top {
+    @apply flex items-center gap-x-[16px];
+}
+
+.workplace-top-image {
     @apply w-[70px] h-[70px] rounded-[10px];
+
+    @media (max-width: 480px) {
+        @apply w-[65px] h-[65px];
+    }
+
+    @media (max-width: 400px) {
+        @apply w-[60px] h-[60px];
+    }
+}
+
+.workplace-top-occupation {
+    @apply text-white text-[32px] font-ru-primary font-bold;
+
+    @media (max-width: 480px) {
+        @apply text-[20px];
+    }
+
+    @media (max-width: 400px) {
+        @apply text-[18px];
+    }
 }
 
 .workplace-textContent {
     @apply grid gap-y-[8px] w-full;
 }
 
-.workplace-textContent-occupation {
-    @apply text-white text-[32px] font-ru-primary font-bold;
-}
-
 .workplace-textContent-company {
-    @apply text-white text-[20px] font-ru-primary font-bold;
+    @apply mt-[12px] text-white text-[20px] font-ru-primary font-bold;
+
+    @media (max-width: 400px) {
+        @apply text-[18px];
+    }
 }
 
 .workplace-textContent-timeGap {
-    @apply text-white2 text-[16px] font-ru-primary font-normal brightness-75;
+    @apply mt-[-6px] text-white2 text-[16px] font-ru-primary font-normal brightness-75;
 }
 
 .workplace-textContent-results {

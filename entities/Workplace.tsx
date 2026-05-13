@@ -27,11 +27,13 @@ const Workplace: React.FC<WorkPlaceProps> = ({
       ref={workplaceRef}
       className={`workplace ${isInView ? "translate-y-0 opacity-100" : "translate-y-[16px] opacity-0"}`}
     >
-      <img src={logo} alt="" className="workplace-image" />
+      <div className="workplace-top">
+        <img src={logo} alt="" className="workplace-top-image" />
+
+        <h3 className="workplace-top-occupation">{workplaces[index].occupation}</h3>
+      </div>
 
       <div className="workplace-textContent">
-        <h3 className="workplace-textContent-occupation">{workplaces[index].occupation}</h3>
-
         <h4 className="workplace-textContent-company">{workplaces[index].companyName}</h4>
 
         <p className="workplace-textContent-timeGap">{workplaces[index].timeGap}</p>

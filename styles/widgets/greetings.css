@@ -7,7 +7,7 @@
            w-full min-h-screen h-auto;
 
     @media (max-width: 480px) {
-        @apply grid justify-items-center h-auto pt-[140px] pb-[80px];
+        @apply grid justify-items-center max-w-[calc(100vw-40px)] h-auto pt-[120px] pb-[60px];
     }
 
     @media (max-width: 400px) {
@@ -69,7 +69,7 @@
            font-ru-primary font-normal;
 
     @media (max-width: 480px) {
-        @apply mt-[20px] text-[20px] leading-[34px];
+        @apply mt-[20px] max-w-[90%] text-[20px] leading-[34px];
     }
 
     @media (max-width: 400px) {
@@ -78,36 +78,52 @@
 }
 
 .greetings-textBlock-statistics {
-    @apply flex items-start gap-x-[12px] mt-[24px] px-[15px];
+    @apply flex items-start gap-x-[30px] mt-[24px] px-[15px];
+
+    @media (max-width: 480px) {
+        @apply grid justify-items-center gap-y-[24px] w-full;
+    }
 }
 
 .greetings-textBlock-statistics-item {
     @apply grid justify-items-center gap-y-[8px];
-}
 
-.greetings-textBlock-statistics-item:first-child {
-    @apply pr-[30px];
+    @media (max-width: 480px) {
+        @apply w-full;
+    }
 }
 
 .greetings-textBlock-statistics-item:nth-child(2) {
     @apply px-[30px] border-[#424346] border-x-[1px];
-}
 
-.greetings-textBlock-statistics-item:last-child {
-    @apply pl-[30px];
+    @media (max-width: 480px) {
+        @apply px-0 pb-[30px] border-y-[1px] border-x-[0px];
+    }
 }
 
 .greetings-textBlock-statistics-item-number {
     @apply mt-[-10px] text-gradient2-end text-[62px] font-ru-primary font-bold;
+
+    @media (max-width: 480px) {
+        @apply text-[102px];
+    }
 }
 
 .greetings-textBlock-statistics-item-text {
     @apply mt-[-16px] text-white2 text-[16px] text-center font-ru-primary 
            font-medium leading-[26px] brightness-[0.6];
+
+    @media (max-width: 480px) {
+        @apply text-[24px] leading-[24px];
+    }
 }
 
 .greetings-textBlock-buttonsContainer {
     @apply flex items-center gap-x-[24px] mt-[40px];
+
+    @media (max-width: 480px) {
+        @apply grid justify-items-center gap-y-[12px] mt-[10px];
+    }
 }
 
 .greetings-textBlock-buttonsContainer-contactButton {
@@ -155,8 +171,8 @@
            rotate-[-7deg];
 
     @media (max-width: 480px) {
-        @apply mt-[60px] w-[320px] min-w-[320px] h-[320px] min-h-[320px] 
-               rounded-[20px];
+        @apply mt-[40px] mx-auto w-[320px] min-w-[320px] h-[320px] min-h-[320px] 
+               rotate-0 rounded-[20px];
     }
 
     @media (max-width: 400px) {

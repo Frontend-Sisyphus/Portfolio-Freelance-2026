@@ -1,13 +1,11 @@
 "use client";
-import { usePathname, useRouter } from '@/i18n/navigation';
+import { useRouter } from '@/i18n/navigation';
 
 import { AnimatePresence, useScroll, motion } from "motion/react";
 
 import { useTheme } from "next-themes";
 
 import { useLocale, useTranslations } from 'next-intl';
-
-import { useSearchParams } from 'next/navigation';
 
 import { useView } from "@/context/ViewProvider";
 
@@ -33,8 +31,6 @@ const Header = () => {
 
   const locale = useLocale();
   const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   const toggle = () => {
     const newLocale = locale === 'en' ? 'ru' : 'en';

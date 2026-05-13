@@ -4,6 +4,10 @@
 
 .tools {
   @apply relative grid justify-items-start pb-[100px] w-full h-auto;
+
+  @media (max-width: 480px) {
+    @apply pb-[40px];
+  }
 }
 
 .tools-container {
@@ -28,8 +32,20 @@
   @apply w-auto px-[30px] bg-linear-to-br bg-clip-text text-transparent 
          from-gradient2-start via-gradient2-center to-gradient2-end 
          text-[20px] text-center text-nowrap font-ru-primary font-bold uppercase;
+
+  @media (max-width: 480px) {
+    @apply px-[10px] text-[18px];
+  }
+
+  @media (max-width: 400px) {
+    @apply text-[16px];
+  }
 }
 
 .tools-container-content {
   @apply grid grid-cols-3 gap-x-[16px] gap-y-[12px] w-full;
+
+  @media (max-width: 480px) {
+    @apply grid-cols-1 gap-y-[8px];
+  }
 }

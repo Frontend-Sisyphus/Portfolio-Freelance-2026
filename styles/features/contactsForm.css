@@ -5,6 +5,10 @@
 .contactsForm {
     @apply relative grid gap-y-[14px] px-[20px] pt-[34px] pb-[20px] w-full 
            bg-gradient-to-r from-gradient-start to-gradient-end rounded-[15px];
+        
+    @media (max-width: 480px) {
+        @apply mt-[12px];
+    }
 }
 
 .contactsForm-field {

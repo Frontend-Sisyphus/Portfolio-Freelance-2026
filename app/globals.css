@@ -71,10 +71,19 @@
 }
 
 body {
-  @apply relative grid justify-items-center min-w-screen min-h-screen bg-light-theme dark:bg-theme overflow-x-hidden;
+  @apply relative grid justify-items-center w-full bg-light-theme 
+         dark:bg-theme overflow-x-hidden;
 
   @media (max-width: 480px) {
     @apply px-[20px];
+  }
+}
+
+main {
+  @apply relative w-full max-w-[1220px] h-auto;
+
+  @media (max-width: 480px) {
+    @apply overflow-x-hidden;
   }
 }
 
@@ -95,14 +104,11 @@ button {
 }
 
 .sectionTitle {
-  @apply text-white text-[60px] font-ru-secondary font-bold leading-[60px] uppercase brightness-[0.85];
+  @apply text-white text-[60px] font-ru-secondary font-bold 
+         leading-[60px] uppercase brightness-[0.85];
 
   @media (max-width: 480px) {
-    @apply text-[34px] leading-[42px];
-  }
-
-  @media (max-width: 400px) {
-    @apply text-[28px] leading-[34px];
+    @apply text-[24px] leading-[34px];
   }
 }
 
