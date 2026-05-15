@@ -50,7 +50,10 @@
     "classNames": "[\"Expert\",\"Advanced\",\"Intermediate\",\"Beginner\"]"
   },
   "projects": {
-    "title": "Projects"
+    "title": "Projects",
+    "description": "[\"A project with 167+ free developer tools: formatters, converters, validators, cheatsheets for Git, HTTP, Regex, and guides on databases and backend. No registration or payment, all in the browser.\",\"A platform for startup investments: users review project achievements via dashboards and graphs, invest funds, or create their own startup, publishing its progress to attract investments.\",\"A site with complete information for Helldivers 2 players: equipment and weapon stats, the Stratagem Hero mini-game, and a galactic war global map with live event progress.\",\"The site contained event rules, format specifics, required documents, a registration form, and a live stream from the competition.\",\"A platform where CTF community members can buy merchandise with points earned through successful competition results or community activities.\",\"The website of the student IT community at KIPFIN College and Financial University: structure, achievements, rules, and documentation including the official decree establishing the community.\"]",
+    "linkTooltip": "The site is no longer hosted",
+    "gitHubTooltip": "Privately owned by"
   },
   "contacts": {
     "title": "Get in touch",

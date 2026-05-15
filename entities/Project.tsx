@@ -1,31 +1,37 @@
 "use client";
 import React, { useRef } from "react";
 
+import { useTranslations } from "next-intl";
+
 import { useInView } from "framer-motion";
+
+import { getIntlArray } from "@/utils/generalFunctions";
 
 import Link from "next/link";
 
 import "@/styles/entities/project.css";
 
 interface ProjectProps {
+  index: number;
   banner: string;
   owner: string;
   title: string;
   siteLink: string;
   githubLink: string;
-  description: string;
   tags: string[];
 }
 
 const Project: React.FC<ProjectProps> = ({
+  index,
   banner,
   owner,
   title,
   siteLink,
   githubLink,
-  description,
   tags,
 }) => {
+  const t = useTranslations('projects');
+
   const projectRef = useRef(null);
 
   const isInView = useInView(projectRef, { once: true });
@@ -65,9 +71,9 @@ const Project: React.FC<ProjectProps> = ({
               </Link>
             ) : (
               <div
-                {...(!siteLink.includes("https") && {
-                  "data-blobity-tooltip": siteLink,
-                })}
+                // {...(!siteLink.includes("https") && {
+                //   "data-blobity-tooltip": t('linkTooltip')
+                // })}
                 data-blobity-magnetic="false"
                 className="project-info-top-links-item inactive-link"
               >
@@ -111,9 +117,9 @@ const Project: React.FC<ProjectProps> = ({
               </Link>
             ) : (
               <div
-                {...(!githubLink && {
-                  "data-blobity-tooltip": `Privately owned by ${owner}`,
-                })}
+                // {...(!githubLink && {
+                //   "data-blobity-tooltip": `${t('gitHubTooltip')} ${owner}`,
+                // })}
                 data-blobity-magnetic="false"
                 className="project-info-top-links-item inactive-link"
               >
@@ -136,7 +142,7 @@ const Project: React.FC<ProjectProps> = ({
         </div>
 
         <div className="project-info-bottom">
-          <p className="project-info-bottom-description">{description}</p>
+          <p className="project-info-bottom-description">{getIntlArray(t('descriptions'))[index]}</p>
 
           <div className="project-info-bottom-tags">
             {tags.map((tag, index) => (

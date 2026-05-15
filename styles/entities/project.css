@@ -48,7 +48,7 @@
 }
 
 .project-info-bottom-description {
-    @apply text-white text-[16px] font-en-primary font-normal brightness-75;
+    @apply text-white text-[16px] font-ru-primary font-normal brightness-75;
 }
 
 .project-info-bottom-tags {
@@ -57,6 +57,10 @@
 
 .project-info-bottom-tags-item {
     @apply px-[10px] py-[6px] bg-gradient-to-r from-gradient-start to-gradient-end rounded-[5px] text-white text-[16px] font-en-primary font-semibold uppercase;
+}
+
+.blobity-tooltip {
+    @apply !bottom-0 !left-[-100px];
 }
 
 @media (max-width: 480px) {

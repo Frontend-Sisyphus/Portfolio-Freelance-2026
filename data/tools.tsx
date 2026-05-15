@@ -78,13 +78,13 @@ export const tools = [
             <path d="M22.264 2.007 12.54 3.912a.36.36 0 0 0-.288.33l-.598 10.104a.357.357 0 0 0 .437.369l2.707-.625a.357.357 0 0 1 .43.42l-.804 3.939a.357.357 0 0 0 .454.413l1.672-.508a.357.357 0 0 1 .454.414l-1.279 6.187c-.08.387.435.598.65.267l.143-.222 7.925-15.815a.357.357 0 0 0-.387-.51l-2.787.537a.357.357 0 0 1-.41-.45l1.818-6.306a.357.357 0 0 0-.412-.45" fill="url(#b)"/>
             <defs>
               <linearGradient id="a" x1="6" y1="33" x2="235" y2="344" gradientUnits="userSpaceOnUse" gradientTransform="translate(1.34 1.894)scale(.07142)">
-                <stop stop-color="#41d1ff"/>
-                <stop offset="1" stop-color="#bd34fe"/>
+                <stop stopColor="#41d1ff"/>
+                <stop offset="1" stopColor="#bd34fe"/>
               </linearGradient>
               <linearGradient id="b" x1="194.651" y1="8.818" x2="236.076" y2="292.989" gradientUnits="userSpaceOnUse" gradientTransform="translate(1.34 1.894)scale(.07142)">
-                <stop stop-color="#ffea83"/>
-                <stop offset=".083" stop-color="#ffdd35"/>
-                <stop offset="1" stop-color="#ffa800"/>
+                <stop stopColor="#ffea83"/>
+                <stop offset=".083" stopColor="#ffdd35"/>
+                <stop offset="1" stopColor="#ffa800"/>
               </linearGradient>
             </defs>
           </svg>),
@@ -118,12 +118,12 @@ export const tools = [
     icon: (<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 128 128">
             <defs>
               <linearGradient id="as" x1="50%" x2="50%" y1="0%" y2="100%">
-                <stop offset="0%" stop-color="#0080ff"/>
-                <stop offset="100%" stop-color="#00b7ff"/>
+                <stop offset="0%" stopColor="#0080ff"/>
+                <stop offset="100%" stopColor="#00b7ff"/>
               </linearGradient>
               <linearGradient id="bs" x1="50%" x2="50%" y1="0%" y2="100%">
-                <stop offset="0%" stop-color="#00b7ff"/>
-                <stop offset="100%" stop-color="#0080ff"/>
+                <stop offset="0%" stopColor="#00b7ff"/>
+                <stop offset="100%" stopColor="#0080ff"/>
               </linearGradient>
             </defs>
             <g fill="none">
@@ -229,20 +229,20 @@ export const tools = [
     icon: (<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="10.384 3.745 210.464 326.562">
             <defs>
               <linearGradient id="az" x1="55.342%" x2="42.817%" y1="0%" y2="42.863%">
-                <stop offset="0%" stop-color="#52ce63"/>
-                <stop offset="100%" stop-color="#51a256"/>
+                <stop offset="0%" stopColor="#52ce63"/>
+                <stop offset="100%" stopColor="#51a256"/>
               </linearGradient>
               <linearGradient id="bz" x1="55.349%" x2="42.808%" y1="0%" y2="42.863%">
-                <stop offset="0%" stop-color="#52ce63"/>
-                <stop offset="100%" stop-color="#51a256"/>
+                <stop offset="0%" stopColor="#52ce63"/>
+                <stop offset="100%" stopColor="#51a256"/>
               </linearGradient>
               <linearGradient id="cz" x1="50%" x2="50%" y1="0%" y2="58.811%">
-                <stop offset="0%" stop-color="#8ae99c"/>
-                <stop offset="100%" stop-color="#52ce63"/>
+                <stop offset="0%" stopColor="#8ae99c"/>
+                <stop offset="100%" stopColor="#52ce63"/>
               </linearGradient>
               <linearGradient id="dz" x1="51.378%" x2="44.585%" y1="17.473%" y2="100%">
-                <stop offset="0%" stop-color="#ffe56c"/>
-                <stop offset="100%" stop-color="#ffc63a"/>
+                <stop offset="0%" stopColor="#ffe56c"/>
+                <stop offset="100%" stopColor="#ffc63a"/>
               </linearGradient>
             </defs>
             <path fill="url(#az)" d="M67.56 173.328c30.366-2.985 41.08-27.648 44.735-64.823 3.654-37.175-21.174-70.814-31.502-69.799s-43.15 40.322-46.805 77.497c-3.654 37.175 3.205 60.11 33.572 57.125" transform="rotate(-38 72.877 106.136)"/>
@@ -285,23 +285,23 @@ export const tools = [
     icon: (<svg width="42" height="42" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient x1="62.102%" y1="0%" x2="108.197%" y2="37.864%" id="ac">
-                <stop stop-color="#4285eb" offset="0%"/>
-                <stop stop-color="#2ec7ff" offset="100%"/>
+                <stop stopColor="#4285eb" offset="0%"/>
+                <stop stopColor="#2ec7ff" offset="100%"/>
               </linearGradient>
               <linearGradient x1="69.644%" y1="0%" x2="54.043%" y2="108.457%" id="bc">
-                <stop stop-color="#29cdff" offset="0%"/>
-                <stop stop-color="#148eff" offset="37.86%"/>
-                <stop stop-color="#0a60ff" offset="100%"/>
+                <stop stopColor="#29cdff" offset="0%"/>
+                <stop stopColor="#148eff" offset="37.86%"/>
+                <stop stopColor="#0a60ff" offset="100%"/>
               </linearGradient>
               <linearGradient x1="69.691%" y1="-12.974%" x2="16.723%" y2="117.391%" id="cc">
-                <stop stop-color="#fa816e" offset="0%"/>
-                <stop stop-color="#f74a5c" offset="41.473%"/>
-                <stop stop-color="#f51d2c" offset="100%"/>
+                <stop stopColor="#fa816e" offset="0%"/>
+                <stop stopColor="#f74a5c" offset="41.473%"/>
+                <stop stopColor="#f51d2c" offset="100%"/>
               </linearGradient>
               <linearGradient x1="68.128%" y1="-35.691%" x2="30.44%" y2="114.943%" id="dc">
-                <stop stop-color="#fa8e7d" offset="0%"/>
-                <stop stop-color="#f74a5c" offset="51.264%"/>
-                <stop stop-color="#f51d2c" offset="100%"/>
+                <stop stopColor="#fa8e7d" offset="0%"/>
+                <stop stopColor="#f74a5c" offset="51.264%"/>
+                <stop stopColor="#f51d2c" offset="100%"/>
               </linearGradient>
             </defs>
             <g fill="none">
@@ -341,12 +341,12 @@ export const tools = [
     icon: (<svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 128 128" width="42" height="42">
             <defs>
               <linearGradient id="ae" x1="45.79" y1="-651.52" x2="78.92" y2="-770.77" gradientTransform="matrix(1 0 0 -1 0 -648.86)" gradientUnits="userSpaceOnUse">
-                <stop offset=".28" stop-color="#00cdd7"/>
-                <stop offset=".94" stop-color="#2086d7"/>
+                <stop offset=".28" stopColor="#00cdd7"/>
+                <stop offset=".94" stopColor="#2086d7"/>
               </linearGradient>
               <linearGradient id="be" x1="56.07" y1="-666.71" x2="112.11" y2="-748.88" gradientTransform="matrix(1 0 0 -1 0 -648.86)" gradientUnits="userSpaceOnUse">
-                <stop offset=".14" stop-color="#fff045"/>
-                <stop offset=".37" stop-color="#00cdd7"/>
+                <stop offset=".14" stopColor="#fff045"/>
+                <stop offset=".37" stopColor="#00cdd7"/>
               </linearGradient>
               <linearGradient id="ce" x1="111.71" y1="-676.79" x2="119.07" y2="-702.86" xlinkHref="#a"/>
             </defs>

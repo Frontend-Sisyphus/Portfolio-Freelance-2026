@@ -8,7 +8,7 @@ export const initialBlobityOptions = {
   invert: true,
   focusableElements:
     "[data-blobity], a:not([data-no-blobity]), button:not([data-no-blobity]), [data-blobity-tooltip]",
-  font: "'Kumbh Sans', -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif",
+  font: "'NotoSans', -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif",
   fontSize: 16,
   fontWeight: 500,
   opacity: 1,

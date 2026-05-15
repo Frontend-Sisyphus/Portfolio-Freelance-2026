@@ -40,15 +40,15 @@ const Projects = () => {
       />
 
       <div className="projects-container">
-        {projects.map((project) => (
+        {projects.map((project, index) => (
           <Project
             key={project.id}
+            index={index}
             owner={project.owner}
             banner={project.banner}
             title={project.title}
             siteLink={project.siteLink}
             githubLink={project.githubLink}
-            description={project.description}
             tags={project.tags}
           />
         ))}
