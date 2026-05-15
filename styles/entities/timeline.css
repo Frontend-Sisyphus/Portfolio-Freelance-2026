@@ -21,11 +21,11 @@
 }
 
 .timeline-decorationCircle:nth-child(2) {
-    @apply top-[349px];
+    @apply top-[369px];
 }
 
 .timeline-decorationCircle:last-child {
-    @apply top-[712px];
+    @apply top-[752px];
 }
 
 .timeline-decorationCircle-inner {

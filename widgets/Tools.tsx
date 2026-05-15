@@ -1,11 +1,17 @@
 "use client";
+import React, { useRef, useEffect } from "react";
+
 import { useTranslations } from 'next-intl';
 
-import { getIntlArray } from '@/utils/generalFunctions';
+import {
+  useInView,
+} from "framer-motion";
+
+import { useView } from "@/context/ViewProvider";
 
 import { tools } from '@/data/tools';
 
-import Tool from '@/entities/Tool';
+import ToolBlock from "@/widgets/ToolBlock";
 
 import AnimatedTitle from '@/shared/AnimatedTitle';
 
@@ -14,8 +20,19 @@ import '@/styles/widgets/tools.css';
 export default function Tools() {
   const t = useTranslations('tools');
 
+  const { setSectionInView } = useView();
+
+  const toolsRef = useRef(null);
+
+  const isInView = useInView(toolsRef);
+
+  useEffect(() => {
+    if (isInView) {
+      setSectionInView("инструменты");
+    }
+  }, [isInView]);
   return (
-    <section id="tools" className="tools">
+    <section id="tools" ref={toolsRef} className="tools">
       <AnimatedTitle
         type={2}
         text={t('title')}
@@ -25,100 +42,30 @@ export default function Tools() {
       />
 
       <div className="tools-container">
-        <div className="tools-container-top">
-          <hr/>
+        <ToolBlock 
+          index={0} 
+          tools={tools.filter(tool => tool.type === "language")}
+        />
 
-          <h4 className="tools-container-top-title">{getIntlArray(t('blockTitles'))[0]}</h4>
+        <ToolBlock 
+          index={1} 
+          tools={tools.filter(tool => tool.type === "framework" || tool.type === "library")}
+        />
 
-          <hr/>
-        </div>
+        <ToolBlock 
+          index={2} 
+          tools={tools.filter(tool => tool.type === "stateManager")}
+        />
 
-        <div className="tools-container-content">
-          {tools.filter(tool => tool.type === "language").map(tool => 
-            <Tool 
-              key={tool.id}
-              title={tool.title} 
-              icon={tool.icon} 
-              progress={tool.progress}
-            />
-          )}
-        </div>
+        <ToolBlock 
+          index={3} 
+          tools={tools.filter(tool => tool.type === "style")}
+        />
 
-        <div className="tools-container-top">
-          <hr/>
-
-          <h4 className="tools-container-top-title">{getIntlArray(t('blockTitles'))[1]}</h4>
-
-          <hr/>
-        </div>
-
-        <div className="tools-container-content">
-          {tools.filter(tool => tool.type === "framework" || tool.type === "library").map(tool => 
-            <Tool 
-              key={tool.id}
-              title={tool.title} 
-              icon={tool.icon} 
-              progress={tool.progress}
-            />
-          )}
-        </div>
-
-        <div className="tools-container-top">
-          <hr/>
-
-          <h4 className="tools-container-top-title">{getIntlArray(t('blockTitles'))[2]}</h4>
-
-          <hr/>
-        </div>
-
-        <div className="tools-container-content">
-          {tools.filter(tool => tool.type === "stateManager").map(tool => 
-            <Tool 
-              key={tool.id}
-              title={tool.title} 
-              icon={tool.icon} 
-              progress={tool.progress}
-            />
-          )}
-        </div>
-
-        <div className="tools-container-top">
-          <hr/>
-
-          <h4 className="tools-container-top-title">{getIntlArray(t('blockTitles'))[3]}</h4>
-
-          <hr/>
-        </div>
-
-        <div className="tools-container-content">
-          {tools.filter(tool => tool.type === "style").map(tool => 
-            <Tool 
-              key={tool.id}
-              title={tool.title} 
-              icon={tool.icon} 
-              progress={tool.progress}
-            />
-          )}
-        </div>
-
-        <div className="tools-container-top">
-          <hr/>
-
-          <h4 className="tools-container-top-title">{getIntlArray(t('blockTitles'))[4]}</h4>
-
-          <hr/>
-        </div>
-
-        <div className="tools-container-content">
-          {tools.filter(tool => tool.type === "application").map(tool => 
-            <Tool 
-              key={tool.id}
-              title={tool.title} 
-              icon={tool.icon} 
-              progress={tool.progress}
-            />
-          )}
-        </div>
+        <ToolBlock 
+          index={4} 
+          tools={tools.filter(tool => tool.type === "application")}
+        />
       </div>
     </section>
   )

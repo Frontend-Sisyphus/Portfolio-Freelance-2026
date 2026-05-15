@@ -28,7 +28,7 @@ const Work = () => {
 
   useEffect(() => {
     if (isInView) {
-      setSectionInView("работа");
+      setSectionInView("работа и образование");
     }
   }, [isInView]);
   return (

@@ -83,6 +83,7 @@ const Header = () => {
                 exit={{ x: 0, y: -50, }}
                 transition={{ duration: 0.4 }}
                 className="header-right-toggleThemeButton-iconWrapper"
+                suppressHydrationWarning
               >
                 <Sun size={18} strokeWidth={1.5} />
               </motion.div>
@@ -94,6 +95,7 @@ const Header = () => {
                 exit={{ x: 0, y: 50, }}
                 transition={{ duration: 0.4 }}
                 className="header-right-toggleThemeButton-iconWrapper"
+                suppressHydrationWarning
               >
                 <Moon size={18} strokeWidth={1.5} />
               </motion.div>
