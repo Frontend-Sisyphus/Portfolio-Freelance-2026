@@ -13,6 +13,10 @@
     @media (max-width: 400px) {
         @apply pb-[70px];
     }
+
+    @media (min-width: 680px) and (max-width: 1024px) {
+
+    }
 }
 
 .greetings-textBlock {
@@ -57,7 +61,7 @@
 }
 
 .greetings-textBlock-title > .Typewriter {
-    @apply text-white font-bold;
+    @apply mx-auto max-w-[90%] text-white font-bold;
 }
 
 .greetings-textBlock-description {
@@ -123,7 +127,7 @@
 }
 
 .greetings-textBlock-buttonsContainer-contactButton {
-    @apply flex items-center gap-x-[12px] px-[15px] py-[10px] w-[254px] bg-white
+    @apply flex items-center gap-x-[12px] px-[15px] py-[10px] bg-white
            rounded-[10px];
 
     @media (max-width: 480px) {

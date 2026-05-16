@@ -24,7 +24,7 @@
            bg-gradient-to-r from-gradient-start to-gradient-end rounded-[15px]; 
     
     @media (max-width: 480px) {
-        @apply mt-[12px];
+        @apply gap-y-[12px] mt-[12px];
     }
 }
 
@@ -38,15 +38,27 @@
 
 .contacts-connectInfo-title {   
     @apply text-white2 text-[18px] font-bold;
+
+    @media (max-width: 480px) {
+        @apply text-[16px];
+    }
 }
 
 .contacts-connectInfo-description {
     @apply text-white2 text-[16px] brightness-75;
+
+    @media (max-width: 480px) {
+        @apply text-[14px];
+    }
 }
 
 .contacts-connectInfo-points-item-text,
 .contacts-connectInfo-email-content-text {
     @apply text-white text-[16px];
+
+    @media (max-width: 480px) {
+        @apply text-[14px];
+    }
 }
 
 .contacts-connectInfo-points-item-text {
@@ -69,6 +81,14 @@
     @apply flex items-center gap-x-[12px] w-full;
 }
 
+.contacts-connectInfo-points-item svg {
+    @apply min-w-[24px] min-h-[24px];
+
+    @media (max-width: 480px) {
+        @apply w-[20px] min-w-[20px] h-[20px] min-h-[20px];
+    }
+}
+
 .contacts-connectInfo-email {
     @apply grid gap-y-[8px] py-[12px] w-full border-[#576a78] border-y-[1px];
 }
@@ -84,6 +104,10 @@
 
 .contacts-connectInfo-email-content-button > p {
     @apply text-white text-[16px] font-ru-primary font-medium;
+
+    @media (max-width: 480px) {
+        @apply hidden;
+    }
 }
 
 .contacts-connectInfo-iconsContainer {

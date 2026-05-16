@@ -117,13 +117,13 @@ const Greetings = () => {
           className="greetings-textBlock-statistics"
         >
           <div className="greetings-textBlock-statistics-item">
-            <p className="greetings-textBlock-statistics-item-number">2+</p>
+            <p className="greetings-textBlock-statistics-item-number">3+</p>
 
             <p className="greetings-textBlock-statistics-item-text">{getIntlArray(t('statisticsText'))[0]}</p>
           </div>
 
           <div className="greetings-textBlock-statistics-item">
-            <p className="greetings-textBlock-statistics-item-number">4+</p>
+            <p className="greetings-textBlock-statistics-item-number">5+</p>
 
             <p className="greetings-textBlock-statistics-item-text">{getIntlArray(t('statisticsText'))[1]}</p>
           </div>
@@ -163,7 +163,8 @@ const Greetings = () => {
           </motion.a>
 
           <motion.a
-            href="/#contacts"
+            href="/static/frontend-sisyphus-cv.pdf"
+            target="blank"
             data-blobity-radius="12"
             className="greetings-textBlock-buttonsContainer-downloadCVButton"
           >

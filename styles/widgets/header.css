@@ -98,7 +98,7 @@
 }
 
 .header-right-languageToggler-en {
-    @apply right-[7px];
+    @apply right-[6px];
 }
 
 .lang-active {
