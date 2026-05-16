@@ -13,8 +13,7 @@ import { getIntlArray } from '@/utils/generalFunctions';
 
 import { headerTextLinks } from "@/data/headerTextLinks";
 
-import { Sun } from "@deemlol/next-icons";
-import { Moon } from "@deemlol/next-icons";
+import { Sun, Moon } from "@deemlol/next-icons";
 
 import Link from "next/link";
 

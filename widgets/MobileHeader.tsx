@@ -5,6 +5,8 @@ import { useRouter } from '@/i18n/navigation';
 
 import { useLocale, useTranslations } from 'next-intl';
 
+import { useTheme } from "next-themes";
+
 import { useView } from "@/context/ViewProvider";
 
 import { headerTextLinks } from "@/data/headerTextLinks";
@@ -12,12 +14,16 @@ import { greetingsIcons } from "@/data/greetingsIcons";
 
 import { AnimatePresence, motion } from "framer-motion";
 
+import { Sun, Moon } from "@deemlol/next-icons";
+
 import Link from "next/link";
 
 import "@/styles/widgets/mobileHeader.css";
 
 const MobileHeader = () => {
   const t = useTranslations('header');
+
+  const { theme, setTheme } = useTheme();
 
   const { sectionInView } = useView();
 
@@ -139,15 +145,44 @@ const MobileHeader = () => {
                 </Link>
               ))}
 
-              <label className="mobileHeader-languageToggler">
-                <input type="checkbox" checked={true}/>
+              <button 
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")} 
+                data-blobity-magnetic="false"
+                data-blobity-radius="10"
+                className="mobileHeader-toggleThemeButton"
+              >
+                <AnimatePresence initial={false}>
+                  {theme === "dark" ? 
+                    <motion.div
+                      key="sun"
+                      initial={{ x: 0, y: -100, }}
+                      animate={{ x: 0, y: 0, }}
+                      exit={{ x: 0, y: -100, }}
+                      transition={{ duration: 0.4 }}
+                      className="mobileHeader-toggleThemeButton-iconWrapper"
+                      suppressHydrationWarning
+                    >
+                      <Sun size={18} strokeWidth={1.5} />
+                    </motion.div>
+                    :
+                    <motion.div
+                      key="moon"
+                      initial={{ x: 0, y: 100, }}
+                      animate={{ x: 0, y: 0, }}
+                      exit={{ x: 0, y: 100, }}
+                      transition={{ duration: 0.4 }}
+                      className="mobileHeader-toggleThemeButton-iconWrapper"
+                      suppressHydrationWarning
+                    >
+                      <Moon size={18} strokeWidth={1.5} />
+                    </motion.div>
+                  }
+                </AnimatePresence>
+              </button>
 
-                <div className="mobileHeader-languageToggler-slider"/>
-
-                <p className={`mobileHeader-languageToggler-ru ${locale === "ru" ? "lang-active" : "lang-inactive"}`}>{locale === "ru" ? "ru" : "en"}</p>
-
-                <p className={`mobileHeader-languageToggler-en ${locale === "en" ? "lang-active" : "lang-inactive"}`}>{locale === "ru" ? "en" : "ru"}</p>
-              </label>
+              <button onClick={() => toggle()} className="mobileHeader-toggleLanguageButton">
+                <p>{locale === "ru" ? "en" : "ru"}</p>
+              </button>
             </div>
           </motion.div>
         )}

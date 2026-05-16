@@ -48,10 +48,10 @@
 }
 
 .greetings-textBlock-title {
-    @apply mt-[-5px] text-[58px] font-ru-primary font-bold leading-[68px];
+    @apply relative mt-[-5px] text-[58px] font-ru-primary font-bold leading-[68px];
 
     @media (max-width: 480px) {
-        @apply mt-[10px] text-[28px] leading-[40px];
+        @apply block mt-[10px] w-[90%] text-[28px] leading-[40px];
     }
 }
 
@@ -62,10 +62,6 @@
 
 .greetings-textBlock-title > .Typewriter {
     @apply mx-auto text-white font-bold;
-
-    @media (max-width: 480px) {
-        @apply max-w-[90%];
-    }
 }
 
 .greetings-textBlock-description {
