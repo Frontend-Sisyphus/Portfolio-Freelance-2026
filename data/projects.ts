@@ -4,7 +4,7 @@ export const projects = [
     owner: "Cordinate system LLC",
     banner: "/static/startup-cycle.png",
     title: "Startup Cycle",
-    siteLink: "https://startup-cycle.ru",
+    siteLink: "https://radixsystem.ru",
     githubLink: "",
     description: "",
     tags: [

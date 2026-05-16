@@ -61,7 +61,11 @@
 }
 
 .greetings-textBlock-title > .Typewriter {
-    @apply mx-auto max-w-[90%] text-white font-bold;
+    @apply mx-auto text-white font-bold;
+
+    @media (max-width: 480px) {
+        @apply max-w-[90%];
+    }
 }
 
 .greetings-textBlock-description {
