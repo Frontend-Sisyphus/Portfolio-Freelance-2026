@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 import { useView } from "@/context/ViewProvider";
 
@@ -25,6 +25,8 @@ import "@/styles/widgets/greetings.css";
 
 const Greetings = () => {
   const { setSectionInView } = useView();
+
+  const locale = useLocale();
 
   const t = useTranslations("greetings");
 
@@ -163,7 +165,7 @@ const Greetings = () => {
           </motion.a>
 
           <motion.a
-            href="/static/frontend-sisyphus-cv.pdf"
+            href={locale === "ru" ? "/static/frontend-sisyphus-cv-ru.pdf" : "/static/frontend-sisyphus-cv.pdf"}
             target="blank"
             data-blobity-radius="12"
             className="greetings-textBlock-buttonsContainer-downloadCVButton"
