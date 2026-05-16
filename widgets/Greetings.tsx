@@ -117,7 +117,7 @@ const Greetings = () => {
           className="greetings-textBlock-statistics"
         >
           <div className="greetings-textBlock-statistics-item">
-            <p className="greetings-textBlock-statistics-item-number">3+</p>
+            <p className="greetings-textBlock-statistics-item-number">2+</p>
 
             <p className="greetings-textBlock-statistics-item-text">{getIntlArray(t('statisticsText'))[0]}</p>
           </div>
