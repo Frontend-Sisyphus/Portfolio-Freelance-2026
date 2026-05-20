@@ -20,11 +20,11 @@
   window,
   document,
   "script",
-  "https://mc.yandex.ru/metrika/tag.js?id=103952105",
+  "https://mc.yandex.ru/metrika/tag.js?id=109319504",
   "ym",
 );
 
-ym(103952105, "init", {
+ym(109319504, "init", {
   ssr: true,
   webvisor: true,
   clickmap: true,
