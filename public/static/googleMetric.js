@@ -8,7 +8,7 @@
   j.async=true;
   j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
   f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WXF4GGNP');
+})(window,document,'script','dataLayer','G-XMCLJF0Z11');
 
 // gtag функция для удобства (опционально)
 window.gtag = function(){
@@ -17,4 +17,4 @@ window.gtag = function(){
 };
 
 gtag('js', new Date());
-gtag('config', 'GTM-WXF4GGNP');
+gtag('config', 'G-XMCLJF0Z11');
