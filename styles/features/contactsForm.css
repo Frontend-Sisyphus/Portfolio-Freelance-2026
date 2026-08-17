@@ -3,10 +3,10 @@
 @import "../../app/globals.css";
 
 .contactsForm {
-    @apply relative grid gap-y-[14px] px-[20px] pt-[34px] pb-[20px] w-full 
-           bg-gradient-to-r from-gradient-start to-gradient-end rounded-[15px];
-        
-    @media (max-width: 480px) {
+    @apply relative grid gap-y-[14px] px-[20px] pt-[28px] pb-[20px] w-full
+           bg-surface border border-line;
+
+    @media (max-width: 768px) {
         @apply mt-[12px];
     }
 }
@@ -16,44 +16,47 @@
 }
 
 .contactsForm-field > label {
-    @apply text-white2 text-[18px] font-ru-primary font-medium;
+    @apply text-white/50 text-[12px] font-mono uppercase tracking-[0.14em];
 }
 
 .contactsForm-field > input {
-    @apply px-[10px] w-full h-[35px] bg-transparent border-[#576a78] border-[1px] 
-           rounded-[7.5px] text-white text-[16px] font-ru-primary;
+    @apply px-[10px] w-full h-[40px] bg-transparent border-line border
+           text-white text-[15px] font-ru-primary;
 }
 
 .contactsForm-field > input:focus {
-    @apply border-[#7b95a8];
+    @apply border-accent;
 }
 
 .contactsForm-field > textarea {
-    @apply px-[10px] py-[10px] w-full h-[105px] border-[#576a78] border-[1px] 
-           rounded-[7.5px] text-white text-[16px] font-ru-primary resize-none;
+    @apply px-[10px] py-[10px] w-full h-[105px] border-line border
+           text-white text-[15px] font-ru-primary resize-none;
 }
 
 .contactsForm-field > textarea:focus {
-    @apply border-[#7b95a8];
+    @apply border-accent;
 }
 
 .contactsForm-sendButton {
-    @apply w-full h-[50px] bg-linear-to-r from-gradient-start to-gradient-end rounded-[10px];
+    @apply w-full h-[48px] bg-accent;
 }
 
 .contactsForm-sendButton-text {
-    @apply text-[18px] text-white font-ru-secondary 
-           font-bold uppercase;
+    @apply text-[13px] text-on-accent font-mono font-bold uppercase tracking-[0.16em];
 }
 
 .Toastify__toast {
-    @apply !bg-[#0d3151];
+    @apply !bg-[#111111] !text-[#f4f4f2] !border !border-line;
+}
+
+html[data-theme="light"] .Toastify__toast {
+    @apply !bg-[#161615] !text-[#f3f2eb];
 }
 
 .Toastify__progress-bar {
-    @apply bg-[#5e9ecd];
+    @apply bg-accent;
 }
 
 .Toastify__toast-icon > svg {
-    @apply fill-[#5e9ecd];
+    @apply fill-accent;
 }

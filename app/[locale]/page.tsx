@@ -1,10 +1,11 @@
 import ThePageWrapper from "@/widgets/ThePageWrapper";
-import Contacts from "@/widgets/Contacts";
+import Greetings from "@/widgets/Greetings";
 import About from "@/widgets/About";
+import Impact from "@/widgets/Impact";
 import Work from "@/widgets/Work";
 import Tools from "@/widgets/Tools";
 import Projects from "@/widgets/Projects";
-import Greetings from "@/widgets/Greetings";
+import Contacts from "@/widgets/Contacts";
 
 export default function Home() {
   return (
@@ -14,9 +15,11 @@ export default function Home() {
 
         <About />
 
+        <Impact />
+
         <Work />
 
-        <Tools/>
+        <Tools />
 
         <Projects />
 

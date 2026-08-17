@@ -9,13 +9,16 @@ import { useTheme } from "next-themes";
 
 import { useView } from "@/context/ViewProvider";
 
+import { getIntlArray } from "@/utils/generalFunctions";
+
 import { headerTextLinks } from "@/data/headerTextLinks";
 import { greetingsIcons } from "@/data/greetingsIcons";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 
 import { Sun, Moon } from "@deemlol/next-icons";
 
+import Image from "next/image";
 import Link from "next/link";
 
 import "@/styles/widgets/mobileHeader.css";
@@ -69,7 +72,14 @@ const MobileHeader = () => {
     <>
       <header ref={mobileHeaderRef} className="mobileHeader">
         {/* Boris Karabut logo*/}
-        <img src="/static/frontend-sisyphus-logo.png" alt="" className="mobileHeader-logo"/>
+        <Image
+          src="/static/frontend-sisyphus-logo.png"
+          alt="Frontend Sisyphus"
+          width={32}
+          height={26}
+          className="mobileHeader-logo"
+          priority
+        />
 
         <button
           onClick={() => changeIsMenuOpened((prev) => !prev)}
@@ -85,7 +95,7 @@ const MobileHeader = () => {
             >
               <path
                 d="m4.813 4.813 12.375 12.375m-12.375 0L17.188 4.813"
-                stroke="#fff"
+                stroke="currentColor"
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -101,7 +111,7 @@ const MobileHeader = () => {
             >
               <path
                 d="M5 7h14c.6 0 1-.4 1-1s-.4-1-1-1H5c-.6 0-1 .4-1 1s.4 1 1 1m0 6h14c.6 0 1-.4 1-1s-.4-1-1-1H5c-.6 0-1 .4-1 1s.4 1 1 1m0 6h14c.6 0 1-.4 1-1s-.4-1-1-1H5c-.6 0-1 .4-1 1s.4 1 1 1"
-                fill="#fff"
+                fill="currentColor"
               />
             </svg>
           )}
@@ -118,17 +128,17 @@ const MobileHeader = () => {
             className="mobileHeader-menu"
           >
             <nav className="mobileHeader-nav">
-              {headerTextLinks.map((textLink) => (
+              {headerTextLinks.map((textLink, index) => (
                 <Link
                   key={textLink.id}
                   href={textLink.path}
                   className={
-                    sectionInView === textLink.label.toLowerCase()
+                    sectionInView === textLink.id
                       ? "link-active"
                       : "link-inactive"
                   }
                 >
-                  {textLink.label}
+                  {getIntlArray(t("links"))[index]}
                 </Link>
               ))}
             </nav>
@@ -148,7 +158,6 @@ const MobileHeader = () => {
               <button 
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")} 
                 data-blobity-magnetic="false"
-                data-blobity-radius="10"
                 className="mobileHeader-toggleThemeButton"
               >
                 <AnimatePresence initial={false}>

@@ -1,72 +1,47 @@
 "use client";
-import React, { useRef, useEffect } from "react";
+import React from "react";
 
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
 
-import {
-  useInView,
-} from "framer-motion";
+import { practices } from "@/data/practices";
 
-import { useView } from "@/context/ViewProvider";
+import AnimatedTitle from "@/shared/AnimatedTitle";
+import AnimatedParagraph from "@/shared/AnimatedParagraph";
+import SectionMeta from "@/shared/SectionMeta";
 
-import { tools } from '@/data/tools';
-
-import ToolBlock from "@/widgets/ToolBlock";
-
-import AnimatedTitle from '@/shared/AnimatedTitle';
-
-import '@/styles/widgets/tools.css';
+import "@/styles/widgets/tools.css";
 
 export default function Tools() {
-  const t = useTranslations('tools');
+  const t = useTranslations("tools");
 
-  const { setSectionInView } = useView();
-
-  const toolsRef = useRef(null);
-
-  const isInView = useInView(toolsRef);
-
-  useEffect(() => {
-    if (isInView) {
-      setSectionInView("инструменты");
-    }
-  }, [isInView]);
   return (
-    <section id="tools" ref={toolsRef} className="tools">
+    <section id="tools" className="tools">
+      <SectionMeta index="04" label={t("meta")} />
+
       <AnimatedTitle
         type={2}
-        text={t('title')}
+        text={t("title")}
         className="sectionTitle"
         wordSpace="mr-[14px]"
         charSpace="mr-[0.5px]"
       />
 
+      <AnimatedParagraph className="tools-lead">{t("lead")}</AnimatedParagraph>
+
       <div className="tools-container">
-        <ToolBlock 
-          index={0} 
-          tools={tools.filter(tool => tool.type === "language")}
-        />
-
-        <ToolBlock 
-          index={1} 
-          tools={tools.filter(tool => tool.type === "framework" || tool.type === "library")}
-        />
-
-        <ToolBlock 
-          index={2} 
-          tools={tools.filter(tool => tool.type === "stateManager")}
-        />
-
-        <ToolBlock 
-          index={3} 
-          tools={tools.filter(tool => tool.type === "style")}
-        />
-
-        <ToolBlock 
-          index={4} 
-          tools={tools.filter(tool => tool.type === "application")}
-        />
+        {practices.map((practice) => (
+          <article key={practice.id} className="practice">
+            <p className="practice-index">// {practice.index}</p>
+            <h3 className="practice-title">{t(`items.${practice.id}.title`)}</h3>
+            <p className="practice-text">{t(`items.${practice.id}.text`)}</p>
+            <div className="practice-chips">
+              {practice.chips.map((chip) => (
+                <span key={`${practice.id}-${chip}`}>{chip}</span>
+              ))}
+            </div>
+          </article>
+        ))}
       </div>
     </section>
-  )
+  );
 }

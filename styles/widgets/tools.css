@@ -1,15 +1,67 @@
 @import "tailwindcss";
-
 @import "../../app/globals.css";
 
 .tools {
   @apply relative grid justify-items-start pb-[100px] w-full h-auto;
 
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     @apply pb-[40px];
   }
 }
 
+.tools-lead {
+  @apply mt-[16px] max-w-[720px] text-white/55 text-[17px] leading-[28px] font-ru-primary;
+
+  @media (max-width: 768px) {
+    @apply text-[15px] leading-[24px];
+  }
+}
+
 .tools-container {
-  @apply grid gap-y-[12px] mt-[24px] w-full;
+  @apply grid grid-cols-6 gap-[12px] mt-[28px] pt-[24px] w-full border-t border-line;
+
+  @media (max-width: 768px) {
+    @apply grid-cols-1 gap-[10px] mt-[20px];
+  }
+}
+
+.practice {
+  @apply col-span-2 grid gap-y-[12px] p-[24px] bg-surface border border-line duration-300;
+
+  @media (max-width: 768px) {
+    @apply col-span-1 p-[16px];
+  }
+}
+
+.practice:hover {
+  @apply border-white/25;
+}
+
+.practice-index {
+  @apply m-0 font-mono text-[11px] uppercase tracking-[0.18em] text-accent;
+}
+
+.practice-title {
+  @apply m-0 text-white text-[22px] font-ru-secondary font-bold uppercase tracking-[-0.03em];
+
+  @media (max-width: 768px) {
+    @apply text-[18px];
+  }
+}
+
+.practice-text {
+  @apply m-0 text-white/60 text-[15px] leading-[24px] font-ru-primary;
+
+  @media (max-width: 768px) {
+    @apply text-[14px] leading-[22px];
+  }
+}
+
+.practice-chips {
+  @apply flex flex-wrap gap-[8px] mt-[4px];
+}
+
+.practice-chips span {
+  @apply px-[8px] py-[4px] border border-line font-mono text-[11px]
+         uppercase tracking-[0.12em] text-white/70;
 }

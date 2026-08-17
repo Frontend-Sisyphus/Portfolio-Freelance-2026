@@ -1,50 +1,104 @@
 "use client";
 import React, { useRef } from "react";
 
+import { AnimatePresence, motion, useInView } from "motion/react";
 import { useTranslations } from "next-intl";
-
-import { useInView } from "framer-motion";
+import Image from "next/image";
 
 import "@/styles/entities/workplace.css";
 
-interface WorkPlaceProps {
+type WorkplaceProps = {
+  kind: "work" | "education";
+  year: string;
   logo: string;
-  index: number;
-}
+  sourceIndex: number;
+  localIndex: number;
+  isActive: boolean;
+  onToggle: () => void;
+};
 
-const Workplace: React.FC<WorkPlaceProps> = ({
+const Workplace: React.FC<WorkplaceProps> = ({
+  kind,
+  year,
   logo,
-  index,
+  sourceIndex,
+  localIndex,
+  isActive,
+  onToggle,
 }) => {
-  const t = useTranslations('work');
-  const workplaces = t.raw('workplaces');
+  const t = useTranslations("work");
+  const workplaces = t.raw("workplaces");
+  const entry = workplaces[sourceIndex];
 
   const workplaceRef = useRef(null);
+  const isInView = useInView(workplaceRef, { once: true, margin: "-80px" });
 
-  const isInView = useInView(workplaceRef, { once: true });
   return (
-    <div
+    <li
       ref={workplaceRef}
-      className={`workplace ${isInView ? "translate-y-0 opacity-100" : "translate-y-[16px] opacity-0"}`}
+      className={`workplace workplace--${kind} ${isActive ? "is-active" : ""} ${
+        isInView ? "is-visible" : ""
+      }`}
     >
-      <div className="workplace-top">
-        <img src={logo} alt="" className="workplace-top-image" />
+      <p className="workplace-year">{year}</p>
 
-        <h3 className="workplace-top-occupation">{workplaces[index].occupation}</h3>
+      <div className="workplace-rail" aria-hidden="true">
+        <span className="workplace-rail-node" />
       </div>
 
-      <div className="workplace-textContent">
-        <h4 className="workplace-textContent-company">{workplaces[index].companyName}</h4>
+      <article className="workplace-card">
+        <div className="workplace-summary">
+          <Image
+            src={logo}
+            alt=""
+            width={56}
+            height={56}
+            className="workplace-summary-logo"
+          />
 
-        <p className="workplace-textContent-timeGap">{workplaces[index].timeGap}</p>
+          <div className="workplace-summary-copy">
+            <p className="workplace-summary-index">
+              {String(localIndex + 1).padStart(2, "0")}
+            </p>
+            <h4 className="workplace-summary-occupation">{entry.occupation}</h4>
+            <p className="workplace-summary-company">{entry.companyName}</p>
+            <p className="workplace-summary-time">{entry.timeGap}</p>
+          </div>
 
-        <ul className="workplace-textContent-results">
-          {workplaces[index].results.map((result: string) => (
-            <li key={crypto.randomUUID()}>{result}</li>
-          ))}
-        </ul>
-      </div>
-    </div>
+          <button
+            type="button"
+            className="workplace-summary-toggle"
+            onClick={onToggle}
+            aria-expanded={isActive}
+            data-blobity-magnetic="false"
+          >
+            {isActive ? t("collapseLabel") : t("expandLabel")}
+            <i />
+          </button>
+        </div>
+
+        <AnimatePresence initial={false}>
+          {isActive && (
+            <motion.div
+              className="workplace-details"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.45, ease: [0.76, 0, 0.24, 1] }}
+            >
+              <ol className="workplace-details-list">
+                {entry.results.map((result: string, resultIndex: number) => (
+                  <li key={`${sourceIndex}-${resultIndex}`}>
+                    <span>{String(resultIndex + 1).padStart(2, "0")}</span>
+                    <p>{result}</p>
+                  </li>
+                ))}
+              </ol>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </article>
+    </li>
   );
 };
 

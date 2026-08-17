@@ -1,38 +1,103 @@
 {
   "metadata": {
-    "title": "Boris Karabut — Frontend developer",
-    "description": "Frontend freelancer: responsive web dev, full project delivery. Browse portfolio →"
+    "title": "Boris Karabut — Software Engineer | AI, DevOps, Security, UX",
+    "titleTemplate": "%s · Frontend Sisyphus",
+    "description": "Software engineer in Moscow. I ship products with neural nets in the loop, DevOps, tests, and security — without trading away UX or visual craft. 30,000+ people have used the work.",
+    "ogTitle": "Boris Karabut — Software Engineer",
+    "ogDescription": "AI, DevOps, testing, cybersecurity, and interfaces people enjoy. Portfolio of Boris Karabut / Frontend Sisyphus.",
+    "ogAlt": "Boris Karabut — software engineer. Dark technical card with lime accent, Frontend Sisyphus, 30,000+ users, 2,768 hours saved, 0 failures.",
+    "ogSiteName": "Frontend Sisyphus",
+    "applicationName": "Frontend Sisyphus",
+    "author": "Boris Karabut",
+    "jobTitle": "Software engineer",
+    "location": "Moscow, Russia",
+    "keywords": [
+      "Boris Karabut",
+      "Frontend Sisyphus",
+      "software engineer",
+      "software engineer Moscow",
+      "product engineer",
+      "React developer",
+      "Next.js developer",
+      "TypeScript",
+      "AI engineer",
+      "neural networks",
+      "DevOps",
+      "CI/CD",
+      "software testing",
+      "cybersecurity",
+      "UX UI",
+      "interface design",
+      "freelance software engineer",
+      "portfolio"
+    ]
+  },
+  "loader": {
+    "brand": "// fs",
+    "siteName": "Frontend Sisyphus",
+    "blockOne": "loading",
+    "blockTwo": "pipeline",
+    "blockThree": "layout"
   },
   "header": {
-    "links": "[\"Home\",\"About\",\"Work and education\",\"Tools\",\"Projects\",\"Contacts\"]"
+    "links": "[\"Home\",\"About\",\"Work and education\",\"Practice\",\"Projects\",\"Contacts\"]"
   },
   "footer": {
     "copyright": "/ Boris Karabut / ALL RIGHTS RESERVED",
     "buttonText": "Scroll to top"
   },
   "greetings": {
+    "statusAvailable": "available",
+    "statusLocation": "moscow",
     "startText": "Hey, there I'm",
     "title": "Boris Karabut",
-    "occupations": "[\"Frontend developer\",\"React developer\",\"Startup founder\",\"Freelancer\",\"AI enthusiast\"]",
-    "description": "who works across the stack to deliver fast and beautiful websites and web apps that user will love.",
+    "occupations": "[\"Software engineer\",\"Product engineer\",\"AI-native builder\",\"Freelancer\",\"Startup founder\"]",
+    "description": "who ships reliable products with neural nets in the loop, DevOps, testing, and security — without trading away UX or visual craft.",
     "statisticsText": "[\"years experience\",\"years in programming\",\"projects\"]",
     "contactButtonText": "Contact me",
     "cvButtonText": "Download CV"
   },
   "about": {
-    "title": "I make beautiful and fast UI's",
-    "paragraphs": "[\"My passion is to create modern and fast products that promote business growth. I like to contribute to their improvement so that both the business and the end user are satisfied with the result.\",\"From writing my first lines of code back in late 2021 to this point I have been constantly improving my development and architecture skills, improving the final product in the form of an UI/UX as I work and solving complicated tasks that become more complex and complicated over time to ensure growth in my field.\",\"Each task is unique, so I learn and develop in each of them in order not only to give my best, but also to offer solutions that improve the final product.\"]"
+    "meta": "about",
+    "title": "I build products people trust and enjoy",
+    "paragraphs": "[\"I work as a software engineer: I use neural networks in the delivery loop, DevOps to keep releases predictable, and automated tests so quality does not depend on luck. Security is part of the architecture, not a patch at the end.\",\"From the first lines of code in late 2021 I have been growing from interfaces into the full product: architecture, delivery, and the way people actually use what I ship. The north star is still the same — the product has to feel clear, fast, and visually considered.\",\"Every brief is different, so I do not sell a single stack. I pick tools that protect UX and design quality, then wrap them with testing, observability, and secure defaults so the result holds up after launch.\"]"
+  },
+  "impact": {
+    "meta": "results",
+    "title": "What the work added up to",
+    "note": "Figures as of now",
+    "items": {
+      "people": {
+        "value": "30,000+",
+        "label": "people used the projects"
+      },
+      "hours": {
+        "value": "2,768",
+        "label": "hours of work saved"
+      },
+      "failures": {
+        "value": "0",
+        "label": "project failures"
+      }
+    }
   },
   "work": {
+    "meta": "experience",
     "title": "Experience and education",
     "yearsCount": "3 years",
+    "workTrack": "Work",
+    "educationTrack": "Education",
+    "workTrackMeta": "employment log",
+    "educationTrackMeta": "academic log",
+    "expandLabel": "Expand",
+    "collapseLabel": "Collapse",
     "workplaces": [{
-      "occupation": "Middle Frontend developer",
+      "occupation": "Software engineer",
       "companyName": "Coordinate System LLC",
       "timeGap": "Jul 2024 - Jun 2025",
       "results": ["Launched the Startup Cycle project, which got into the Skolkovo startup pre-accelerator.","Developed the service from scratch: I designed the architecture, I chose the technology stack.","Optimized application performance: reduced loading time, improved interface responsiveness.","Covered the code with unit tests (Jest, React Testing Library), increasing the stability of the product.","Participated in the design of new functionality: offered ideas, discussed UX / UI with the team."]
     },{
-      "occupation": "Junior Frontend developer",
+      "occupation": "Software engineer",
       "companyName": "AHISS",
       "timeGap": "May 2023 - Apr 2024",
       "results": ["Launched a website of the most popular cybersecurity competition in the Russian Federation (CTF Cup)","Launched a website for the sale of merch for participants of CTF competitions and events.","Migrated one of the projects from Vue to React.","Optimized existing projects.","Estimated task deadlines.","Close interacted with all team members (from the designer to the information security specialist)."]
@@ -45,20 +110,44 @@
     }]
   },
   "tools": {
-    "title": "Tools",
-    "blockTitles": "[\"Languages\",\"Frameworks and libraries\",\"State management\",\"Styling\",\"Applications\"]",
-    "classNames": "[\"Expert\",\"Advanced\",\"Intermediate\",\"Beginner\"]"
+    "meta": "practice",
+    "title": "How I ship",
+    "lead": "Not a catalogue of every library I have opened. Five practices I actually use to keep products fast, safe, and pleasant to use.",
+    "items": {
+      "interface": {
+        "title": "Interface & design",
+        "text": "The product has to feel obvious in the hand. I treat layout, motion, and visual hierarchy as part of engineering, not a coat of paint at the end."
+      },
+      "ai": {
+        "title": "Neural nets in the loop",
+        "text": "I use models to speed up research, scaffolding, and review — then I verify the output. AI is a multiplier, not a substitute for judgment."
+      },
+      "quality": {
+        "title": "Quality through tests",
+        "text": "Automated checks around the paths that matter, so regressions show up before users do. Quality is a pipeline, not a final round of clicking."
+      },
+      "devops": {
+        "title": "DevOps & delivery",
+        "text": "Repeatable builds, previews, and releases. If it cannot be shipped the same way twice, it is not done."
+      },
+      "security": {
+        "title": "Cybersecurity",
+        "text": "Auth, headers, and threat-aware defaults from the first commit. I come from a CTF community — security is not an afterthought."
+      }
+    }
   },
   "projects": {
+    "meta": "selected work",
     "title": "Projects",
     "descriptions": "[\"A project with 167+ free developer tools: formatters, converters, validators, cheatsheets for Git, HTTP, Regex, and guides on databases and backend. No registration or payment, all in the browser.\",\"A platform for startup investments: users review project achievements via dashboards and graphs, invest funds, or create their own startup, publishing its progress to attract investments.\",\"A site with complete information for Helldivers 2 players: equipment and weapon stats, the Stratagem Hero mini-game, and a galactic war global map with live event progress.\",\"The site contained event rules, format specifics, required documents, a registration form, and a live stream from the competition.\",\"A platform where CTF community members can buy merchandise with points earned through successful competition results or community activities.\",\"The website of the student IT community at KIPFIN College and Financial University: structure, achievements, rules, and documentation including the official decree establishing the community.\"]",
     "linkTooltip": "The site is no longer hosted",
     "gitHubTooltip": "Privately owned by"
   },
   "contacts": {
+    "meta": "contact",
     "title": "Get in touch",
     "connectInfoTitle": "Let's connect",
-    "connectInfoDescription": "I'm currently open to new opportunities. Whether you have a question, a project idea, or just want to say hi — feel free to reach out!",
+    "connectInfoDescription": "I'm open to new work as a software engineer — products where AI, delivery, quality, and security sit next to UX and visual craft. A question, a brief, or a hello is enough.",
     "pointsText": "[\"Available for freelance & full-time roles\",\"Usually responds within 24 hours\",\"Russia, Moscow\"]",
     "copyButtonText": "Copy"
   },

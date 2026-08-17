@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef, useEffect } from "react";
 
-import { useAnimation, motion, useInView } from "framer-motion";
+import { useAnimation, motion, useInView } from "motion/react";
 
 type AnimatedParagraphProps = {
   children: string | React.ReactNode;
@@ -10,54 +10,41 @@ type AnimatedParagraphProps = {
   charSpace?: string;
 };
 
+const EASE = [0.16, 1, 0.3, 1] as const;
+
+const paragraphAnimation = {
+  hidden: {
+    opacity: 0,
+    y: 18,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.9,
+      ease: EASE,
+    },
+  },
+};
+
 export default function AnimatedParagraph({
   children,
   className,
-  wordSpace,
-  charSpace,
 }: AnimatedParagraphProps) {
   const ctrls = useAnimation();
-
   const ref = useRef(null);
-
-  const isInView = useInView(ref, { once: true });
-
-  const wordAnimation = {
-    hidden: {},
-    visible: {},
-  };
-
-  const paragraphAnimation: any = {
-    hidden: {
-      opacity: 0,
-      y: `1em`,
-    },
-    visible: {
-      opacity: 1,
-      y: `0em`,
-      transition: {
-        delay: 0.1,
-        duration: 1,
-        ease: [0.2, 0.65, 0.3, 0.9],
-      },
-    },
-  };
+  const isInView = useInView(ref, { once: true, margin: "-8% 0px" });
 
   useEffect(() => {
     if (isInView) {
       ctrls.start("visible");
     }
-    if (!isInView) {
-      ctrls.start("hidden");
-    }
   }, [ctrls, isInView]);
 
   return (
     <motion.p
-      role="heading"
       className={className}
       ref={ref}
-      aria-hidden="true"
       initial="hidden"
       animate={ctrls}
       variants={paragraphAnimation}

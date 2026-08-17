@@ -1,13 +1,14 @@
 import type { NextConfig } from "next";
 
-import createNextIntlPlugin from 'next-intl/plugin';
-
-// const path = require('path');
+import createNextIntlPlugin from "next-intl/plugin";
 
 const nextConfig: NextConfig = {
-  // turbopack: {
-  //   root: path.join(__dirname, '..'),
-  // },
+  images: {
+    formats: ["image/avif", "image/webp"],
+  },
+  experimental: {
+    optimizePackageImports: ["@deemlol/next-icons", "motion"],
+  },
 };
 
 const withNextIntl = createNextIntlPlugin();

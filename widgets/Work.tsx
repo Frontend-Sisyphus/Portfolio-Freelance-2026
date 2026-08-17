@@ -1,64 +1,50 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 
 import { useTranslations } from "next-intl";
 
-import { useInView } from "framer-motion";
-
-import { useView } from "@/context/ViewProvider";
-
 import { workplaces } from "@/data/workplaces";
 
-import Timeline from "@/entities/Timeline";
-import Workplace from "@/entities/Workplace";
+import ExperienceTrack from "@/entities/ExperienceTrack";
 
 import AnimatedTitle from "@/shared/AnimatedTitle";
 import AnimatedParagraph from "@/shared/AnimatedParagraph";
+import SectionMeta from "@/shared/SectionMeta";
 
 import "@/styles/widgets/work.css";
 
 const Work = () => {
-  const t = useTranslations('work');
+  const t = useTranslations("work");
 
-  const { setSectionInView } = useView();
+  const items = workplaces.map((workplace, sourceIndex) => ({
+    ...workplace,
+    sourceIndex,
+  }));
 
-  const workRef = useRef(null);
+  const workItems = items.filter((item) => item.type === "work");
+  const educationItems = items.filter((item) => item.type === "education");
 
-  const isInView = useInView(workRef);
-
-  useEffect(() => {
-    if (isInView) {
-      setSectionInView("работа и образование");
-    }
-  }, [isInView]);
   return (
-    <section id="work" ref={workRef} className="work">
+    <section id="work" className="work">
+      <SectionMeta index="03" label={t("meta")} />
+
       <div className="work-top">
         <AnimatedTitle
           type={2}
-          text={t('title')}
+          text={t("title")}
           className="sectionTitle"
           wordSpace="mr-[14px]"
           charSpace="mr-[0.5px]"
         />
 
         <AnimatedParagraph className="work-top-yearsCount">
-          {t('yearsCount')}
+          {t("yearsCount")}
         </AnimatedParagraph>
       </div>
 
-      <div className="work-experience">
-        <Timeline />
-
-        <div className="work-experience-container">
-          {workplaces.map((workplace, index) => (
-            <Workplace
-              key={workplace.id}
-              logo={workplace.logo}
-              index={index}
-            />
-          ))}
-        </div>
+      <div className="work-tracks">
+        <ExperienceTrack kind="work" items={workItems} />
+        <ExperienceTrack kind="education" items={educationItems} />
       </div>
     </section>
   );

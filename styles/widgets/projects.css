@@ -5,19 +5,15 @@
 .projects {
     @apply relative grid justify-items-start pb-[100px] w-full h-auto;
 
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
         @apply pb-[80px];
-    }
-
-    @media (max-width: 400px) {
-        @apply pb-[70px];
     }
 }
 
 .projects-container {
-    @apply relative grid gap-y-[24px] mt-[20px] w-full;
+    @apply relative grid gap-y-[12px] mt-[28px] pt-[24px] w-full border-t border-line;
 
-    @media (max-width: 480px) {
-        @apply mt-[10px];
+    @media (max-width: 768px) {
+        @apply mt-[16px];
     }
 }

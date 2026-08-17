@@ -7,13 +7,11 @@ import { useTranslations } from "next-intl";
 
 import { useForm } from "react-hook-form";
 
-import emailjs from "@emailjs/browser";
-
 import { getIntlArray } from "@/utils/generalFunctions";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 
 import "@/styles/features/contactsForm.css";
 
@@ -27,7 +25,10 @@ const ContactsForm = () => {
   const { formState, register, handleSubmit, reset } = useForm();
   const { errors } = formState;
 
-  const sendEmail = () => {
+  const sendEmail = async () => {
+    const emailjsModule = await import("@emailjs/browser");
+    const emailjs = emailjsModule.default ?? emailjsModule;
+
     emailjs
       .sendForm(
         `${process.env.NEXT_PUBLIC_SERVICE_ID}`,
@@ -150,7 +151,6 @@ const ContactsForm = () => {
 
           <button
             data-blobity-magnetic="false"
-            data-blobity-radius="10"
             style={{ backgroundColor: theme === "dark" ? "bg-linear-to-r from-gradient-start to-gradient-end" : "#1d1df" }}
             className="contactsForm-sendButton"
           >

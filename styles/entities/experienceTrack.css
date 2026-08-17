@@ -1,0 +1,67 @@
+@import "tailwindcss";
+@import "../../app/globals.css";
+
+.experienceTrack {
+    @apply relative w-full;
+}
+
+.experienceTrack-head {
+    @apply grid gap-y-[10px] mb-[24px] pb-[16px] border-b border-line;
+}
+
+.experienceTrack-head-meta {
+    @apply m-0 font-mono text-[11px] uppercase tracking-[0.2em] text-white/40;
+}
+
+.experienceTrack-head-row {
+    @apply flex justify-between items-end gap-x-[16px];
+}
+
+.experienceTrack-head-title {
+    @apply m-0 text-white text-[28px] font-ru-secondary font-bold uppercase tracking-[-0.04em];
+
+    @media (max-width: 768px) {
+        @apply text-[22px];
+    }
+}
+
+.experienceTrack-head-count {
+    @apply m-0 font-mono text-[13px] uppercase tracking-[0.16em] text-accent;
+}
+
+.experienceTrack--work .experienceTrack-head-title {
+    @apply text-white;
+}
+
+.experienceTrack--education .experienceTrack-head {
+    @apply border-white/10;
+}
+
+.experienceTrack--education .experienceTrack-head-title {
+    @apply text-white;
+}
+
+.experienceTrack-list {
+    @apply relative m-0 p-0 list-none grid gap-y-[12px];
+}
+
+.experienceTrack-list::before {
+    content: "";
+    @apply absolute top-[18px] bottom-[18px] w-px bg-line;
+    left: 72px;
+
+    @media (max-width: 768px) {
+        left: 36px;
+    }
+}
+
+.experienceTrack--education .experienceTrack-list::before {
+    background-image: repeating-linear-gradient(
+        to bottom,
+        var(--color-accent) 0,
+        var(--color-accent) 4px,
+        transparent 4px,
+        transparent 10px
+    );
+    background-color: transparent;
+}

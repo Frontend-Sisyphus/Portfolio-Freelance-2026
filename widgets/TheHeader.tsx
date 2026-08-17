@@ -15,6 +15,7 @@ import { headerTextLinks } from "@/data/headerTextLinks";
 
 import { Sun, Moon } from "@deemlol/next-icons";
 
+import Image from "next/image";
 import Link from "next/link";
 
 import "@/styles/widgets/header.css";
@@ -42,11 +43,18 @@ const Header = () => {
 
       {/* Frontend Sisyphus logo */}
       <div className="header-left">
-        <img src="/static/frontend-sisyphus-logo.png" alt="" className="header-left-logo"/>
+        <Image
+          src="/static/frontend-sisyphus-logo.png"
+          alt="Frontend Sisyphus"
+          width={84}
+          height={28}
+          className="header-left-logo"
+          priority
+        />
 
         <hr className="header-left-divisionLine"/>
 
-        <p className="header-left-text">Frontend Sisyphus</p>
+        <p className="header-left-text">// frontend sisyphus</p>
       </div>  
 
       <div className="header-right">
@@ -55,9 +63,8 @@ const Header = () => {
             <Link
               key={textLink.id}
               href={textLink.path}
-              data-blobity-radius="10"
               className={
-                sectionInView === textLink.label.toLowerCase()
+                sectionInView === textLink.id
                   ? "link-active"
                   : "link-inactive"
               }
@@ -70,7 +77,6 @@ const Header = () => {
         <button 
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")} 
           data-blobity-magnetic="false"
-          data-blobity-radius="10"
           className="header-right-toggleThemeButton"
         >
           <AnimatePresence initial={false}>

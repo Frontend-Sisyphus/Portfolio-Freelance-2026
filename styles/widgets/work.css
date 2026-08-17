@@ -1,51 +1,34 @@
 @import "tailwindcss";
-
 @import "../../app/globals.css";
 
 .work {
     @apply relative grid justify-items-start pb-[100px] w-full h-auto;
 
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
         @apply pb-[80px];
-    }
-
-    @media (max-width: 400px) {
-        @apply pb-[70px];
     }
 }
 
 .work-top {
-    @apply flex justify-between items-end w-full h-auto;
+    @apply flex justify-between items-end w-full h-auto pb-[20px] border-b border-line;
 
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
         @apply grid grid-cols-[auto_74px];
-    }
-
-    @media (max-width: 400px) {
-        @apply grid-cols-[auto_66px];
     }
 }
 
 .work-top-yearsCount {
-    @apply text-white text-[28px] font-ru-primary font-semibold uppercase brightness-[0.85];
+    @apply text-accent text-[13px] font-mono uppercase tracking-[0.16em];
 
-    @media (max-width: 480px) {
-        @apply text-[20px];
-    }
-
-    @media (max-width: 400px) {
-         @apply text-[16px];
+    @media (max-width: 768px) {
+        @apply text-[11px];
     }
 }
 
-.work-experience {
-    @apply relative flex items-start gap-x-[26px] mt-[20px] w-full;
+.work-tracks {
+    @apply grid gap-y-[80px] mt-[36px] w-full;
 
-    @media (max-width: 480px) {
-        @apply gap-x-[18px];
+    @media (max-width: 768px) {
+        @apply gap-y-[56px] mt-[24px];
     }
-}
-
-.work-experience-container {
-    @apply relative grid justify-items-start gap-y-[32px] w-full;
 }

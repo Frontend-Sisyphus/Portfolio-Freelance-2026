@@ -1,0 +1,110 @@
+@import "tailwindcss";
+@import "../../app/globals.css";
+
+.pageLoader {
+  @apply fixed inset-0 overflow-hidden select-none z-[2147483000] bg-[#111111];
+}
+
+.pageLoader-block,
+.pageLoader-brandBlock {
+  @apply absolute overflow-hidden;
+}
+
+.pageLoader-block {
+  @apply flex flex-col justify-between p-[28px] bg-[#111111] text-[#f2f2f0]
+         border-[#2a2a2a];
+
+  @media (max-width: 768px) {
+    @apply p-[16px];
+  }
+}
+
+.pageLoader-block--tr {
+  @apply top-0 left-1/2 w-1/2 h-1/2 border-l border-b;
+}
+
+.pageLoader-block--bl {
+  @apply top-1/2 left-0 w-1/2 h-1/2 border-r border-t;
+}
+
+.pageLoader-block--br {
+  @apply top-1/2 left-1/2 w-1/2 h-1/2 border-l border-t;
+}
+
+.pageLoader-block-top {
+  @apply flex justify-between items-start gap-x-[12px] font-mono text-[12px]
+         uppercase tracking-[0.14em] text-[#f2f2f0]/70;
+
+  @media (max-width: 768px) {
+    @apply text-[10px] tracking-[0.08em];
+  }
+}
+
+.pageLoader-block-percent {
+  @apply m-0 font-mono font-medium leading-none tabular-nums text-[#f2f2f0];
+  font-size: clamp(42px, 8vw, 96px);
+
+  @media (max-width: 768px) {
+    font-size: clamp(32px, 12vw, 56px);
+  }
+}
+
+.pageLoader-brandBlock {
+  @apply z-10 bg-[#d7ff3f] text-[#111111];
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+}
+
+.pageLoader-brandBlock-content {
+  @apply relative z-10 flex h-full flex-col justify-between p-[28px];
+
+  @media (max-width: 768px) {
+    @apply p-[16px];
+  }
+}
+
+.pageLoader-brandBlock-tag {
+  @apply m-0 font-mono text-[12px] uppercase tracking-[0.16em] text-[#111111]/70;
+
+  @media (max-width: 768px) {
+    @apply text-[10px];
+  }
+}
+
+.pageLoader-brandBlock-title {
+  @apply m-0 max-w-[12ch] font-ru-secondary text-[clamp(28px,4.6vw,64px)]
+         font-bold uppercase leading-[0.9] tracking-[-0.04em];
+
+  @media (max-width: 768px) {
+    @apply max-w-[8ch] text-[28px] leading-[0.92];
+  }
+}
+
+.pageLoader-pluses {
+  @apply pointer-events-none absolute inset-0 grid opacity-35;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+
+.pageLoader-plus {
+  @apply flex items-center justify-center font-mono text-[18px] leading-none text-[#111111];
+  animation: pageLoaderPlus 2.8s ease-in-out infinite;
+
+  @media (max-width: 768px) {
+    @apply text-[14px];
+  }
+}
+
+@keyframes pageLoaderPlus {
+  0%,
+  100% {
+    opacity: 0.18;
+    transform: scale(0.82) rotate(0deg);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.12) rotate(90deg);
+  }
+}

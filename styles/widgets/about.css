@@ -5,31 +5,24 @@
 .about {
     @apply relative grid justify-items-start pb-[100px] w-full h-auto;
 
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
         @apply pb-[80px];
-    }
-
-    @media (max-width: 400px) {
-        @apply pb-[70px];
     }
 }
 
 .about-info {
-    @apply grid grid-cols-[70%_30%] gap-x-[20px] mt-[20px] w-full h-auto;
+    @apply grid grid-cols-[70%_30%] gap-x-[20px] mt-[24px] w-full h-auto
+           pt-[28px] border-t border-line;
 
-    @media (max-width: 480px) {
-        @apply grid-cols-1 gap-y-[30px] mt-[10px];
+    @media (max-width: 768px) {
+        @apply grid-cols-1 gap-y-[30px] mt-[16px];
     }
 }
 
 .about-info-story {
-    @apply grid gap-y-[34px] text-white text-[24px] font-ru-primary brightness-75;
+    @apply grid gap-y-[28px] text-white/70 text-[20px] font-ru-primary leading-[32px];
 
-    @media (max-width: 480px) {
-        @apply gap-y-[24px] text-[18px];
-    }
-
-    @media (max-width: 400px) {
-        @apply text-[16px];
+    @media (max-width: 768px) {
+        @apply gap-y-[20px] text-[16px] leading-[26px];
     }
 }

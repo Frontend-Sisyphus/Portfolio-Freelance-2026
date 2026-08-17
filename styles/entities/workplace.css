@@ -1,78 +1,165 @@
 @import "tailwindcss";
-
 @import "../../app/globals.css";
 
-
 .workplace {
-    @apply grid w-full duration-[600ms] ease-in-out;
-}
+    @apply relative grid grid-cols-[72px_18px_1fr] gap-x-[16px] items-start
+           opacity-0 translate-y-[16px] duration-500;
 
-.workplace-top {
-    @apply flex items-center gap-x-[16px];
-}
-
-.workplace-top-image {
-    @apply w-[70px] h-[70px] rounded-[10px];
-
-    @media (max-width: 480px) {
-        @apply w-[65px] h-[65px];
-    }
-
-    @media (max-width: 400px) {
-        @apply w-[60px] h-[60px];
+    @media (max-width: 768px) {
+        @apply grid-cols-[36px_14px_1fr] gap-x-[10px];
     }
 }
 
-.workplace-top-occupation {
-    @apply text-white text-[32px] font-ru-primary font-bold;
-
-    @media (max-width: 480px) {
-        @apply text-[20px];
-    }
-
-    @media (max-width: 400px) {
-        @apply text-[18px];
-    }
+.workplace.is-visible {
+    @apply opacity-100 translate-y-0;
 }
 
-.workplace-textContent {
-    @apply grid gap-y-[8px] w-full;
-}
+.workplace-year {
+    @apply m-0 pt-[22px] font-mono text-[13px] uppercase tracking-[0.14em]
+           text-white/40 text-right;
 
-.workplace-textContent-company {
-    @apply mt-[12px] text-white text-[20px] font-ru-primary font-bold;
-
-    @media (max-width: 400px) {
-        @apply text-[18px];
+    @media (max-width: 768px) {
+        @apply pt-[18px] text-[10px] tracking-[0.08em];
     }
 }
 
-.workplace-textContent-timeGap {
-    @apply mt-[-6px] text-white2 text-[16px] font-ru-primary font-normal brightness-75;
+.workplace-rail {
+    @apply relative flex justify-center pt-[26px] h-full;
 }
 
-.workplace-textContent-results {
-    @apply grid gap-y-[12px] pl-[22px] text-white text-[16px] font-ru-primary font-normal list-disc;
+.workplace-rail-node {
+    @apply relative z-1 w-[11px] h-[11px] border border-accent bg-theme duration-300;
 }
 
-@media (max-width: 480px) {
-    .workplace-textContent {
-        @apply gap-y-[10px];
-    }
+.workplace--work .workplace-rail-node {
+    @apply rounded-full;
+}
 
-    .workplace-textContent-occupation {
-        @apply text-[24px] leading-[32px];
-    }
+.workplace--education .workplace-rail-node {
+    @apply rotate-45;
+}
 
-    .workplace-textContent-company {
+.workplace.is-active .workplace-rail-node {
+    @apply bg-accent scale-125;
+}
+
+.workplace-card {
+    @apply w-full border border-line bg-surface overflow-hidden duration-300;
+}
+
+.workplace-card:hover,
+.workplace.is-active .workplace-card {
+    @apply border-white/25;
+}
+
+.workplace.is-active .workplace-card {
+    @apply border-accent/50;
+}
+
+.workplace-summary {
+    @apply flex items-start gap-x-[16px] w-full p-[20px] text-left;
+
+    @media (max-width: 768px) {
+        @apply grid grid-cols-[40px_1fr] gap-x-[12px] p-[14px];
+    }
+}
+
+.workplace-summary-logo {
+    @apply w-[56px] h-[56px] min-w-[56px] object-cover border border-line;
+
+    @media (max-width: 768px) {
+        @apply w-[40px] h-[40px] min-w-[40px];
+    }
+}
+
+.workplace-summary-copy {
+    @apply grid gap-y-[4px] min-w-0 flex-1;
+}
+
+.workplace-summary-index {
+    @apply m-0 font-mono text-[11px] uppercase tracking-[0.16em] text-accent;
+}
+
+.workplace-summary-occupation {
+    @apply m-0 text-white text-[22px] font-ru-secondary font-bold uppercase
+           leading-[1.1] tracking-[-0.03em];
+
+    @media (max-width: 768px) {
         @apply text-[16px];
     }
+}
 
-    .workplace-textContent-timeGap {
-        @apply text-[14px];
+.workplace-summary-company {
+    @apply m-0 text-white text-[15px] font-ru-primary font-medium;
+
+    @media (max-width: 768px) {
+        @apply text-[13px];
     }
+}
 
-    .workplace-textContent-results {
-        @apply gap-y-[12px] text-[13px];
+.workplace-summary-time {
+    @apply m-0 font-mono text-[12px] uppercase tracking-[0.12em] text-white/45;
+
+    @media (max-width: 768px) {
+        @apply text-[10px];
+    }
+}
+
+.workplace-summary-toggle {
+    @apply flex items-center gap-x-[8px] mt-[4px] px-[8px] py-[6px] font-mono text-[11px]
+           uppercase tracking-[0.14em] text-white/45 whitespace-nowrap;
+
+    @media (max-width: 768px) {
+        @apply col-span-2 justify-self-end mt-0;
+    }
+}
+
+.workplace-summary-toggle i {
+    @apply relative block w-[12px] h-[12px];
+}
+
+.workplace-summary-toggle i::before,
+.workplace-summary-toggle i::after {
+    content: "";
+    @apply absolute bg-accent duration-300;
+}
+
+.workplace-summary-toggle i::before {
+    @apply top-[5px] left-0 w-full h-px;
+}
+
+.workplace-summary-toggle i::after {
+    @apply top-0 left-[5px] w-px h-full;
+}
+
+.workplace.is-active .workplace-summary-toggle i::after {
+    @apply rotate-90 opacity-0;
+}
+
+.workplace-details {
+    @apply overflow-hidden;
+}
+
+.workplace-details-list {
+    @apply grid gap-y-[12px] m-0 px-[20px] pt-[4px] pb-[22px] list-none;
+
+    @media (max-width: 768px) {
+        @apply px-[14px] pb-[16px] gap-y-[10px];
+    }
+}
+
+.workplace-details-list li {
+    @apply grid grid-cols-[32px_1fr] gap-x-[12px] items-start;
+}
+
+.workplace-details-list span {
+    @apply font-mono text-[11px] uppercase tracking-[0.12em] text-accent pt-[3px];
+}
+
+.workplace-details-list p {
+    @apply m-0 text-white/70 text-[15px] font-ru-primary leading-[24px];
+
+    @media (max-width: 768px) {
+        @apply text-[13px] leading-[20px];
     }
 }

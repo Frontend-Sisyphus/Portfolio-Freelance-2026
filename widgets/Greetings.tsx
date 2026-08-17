@@ -1,30 +1,29 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useMemo, useRef } from "react";
 
 import { useLocale, useTranslations } from "next-intl";
 
-import { useView } from "@/context/ViewProvider";
+import { useLoader } from "@/context/LoaderProvider";
 
 import {
   easeOut,
   motion,
-  useInView,
   useScroll,
   useTransform,
-} from "framer-motion";
+} from "motion/react";
 
-import Typewriter from 'typewriter-effect';
-
+import Image from "next/image";
 import Link from "next/link";
 
 import { getIntlArray } from "@/utils/generalFunctions";
 
 import { greetingsIcons } from "@/data/greetingsIcons";
+import OccupationsTypewriter from "@/shared/OccupationsTypewriter";
 
 import "@/styles/widgets/greetings.css";
 
 const Greetings = () => {
-  const { setSectionInView } = useView();
+  const { isReady } = useLoader();
 
   const locale = useLocale();
 
@@ -32,15 +31,13 @@ const Greetings = () => {
 
   const greetingsRef = useRef(null);
   const imgRef = useRef(null);
-  const mobileImgRef = useRef(null);
-
-  const isInView = useInView(greetingsRef);
+  const occupations = useMemo(() => getIntlArray(t("occupations")), [locale, t]);
 
   const animateIn1 = {
     opacity: [0, 1],
     y: ["1rem", "0px"],
     transition: {
-      delay: 1.5,
+      delay: 0.15,
       duration: 0.7,
       ease: easeOut,
     },
@@ -50,7 +47,7 @@ const Greetings = () => {
     ...animateIn1,
     transition: {
       ...animateIn1.transition,
-      delay: 2,
+      delay: 0.35,
     },
   };
 
@@ -58,7 +55,7 @@ const Greetings = () => {
     ...animateIn1,
     transition: {
       ...animateIn1.transition,
-      delay: 2.4,
+      delay: 0.55,
     },
   };
 
@@ -68,45 +65,51 @@ const Greetings = () => {
 
   const imgRotate = useTransform(scrollYProgress, [0, 1], ["6deg", "-8deg"]);
 
-  useEffect(() => {
-    if (isInView) {
-      setSectionInView("главная");
-    }
-  }, [isInView]);
   return (
     <section id="home" ref={greetingsRef} className="greetings">
       <div className="greetings-textBlock">
+        <div className="greetings-status">
+          <p className="greetings-status-item">
+            <span>status</span>
+            <span>{t("statusAvailable")}</span>
+          </p>
+          <p className="greetings-status-item">
+            <span>loc</span>
+            <span>{t("statusLocation")}</span>
+          </p>
+          <p className="greetings-status-item">
+            <span>utc</span>
+            <span>+3</span>
+          </p>
+        </div>
+
         <span className="greetings-textBlock-content">
           <motion.p
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.1, ease: "easeOut" }}
+            animate={isReady ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
             className="greetings-textBlock-startText"
           >
-            {t('startText')}
+            // {t('startText')}
           </motion.p>
 
           <motion.h1
             initial={{ opacity: 0 }}
-            animate={animateIn1}
+            animate={isReady ? animateIn1 : { opacity: 0 }}
             className="greetings-textBlock-title"
           >
             <b>{t('title')}</b>
             <br />
-            <Typewriter
-              options={{
-                strings: getIntlArray(t('occupations')),
-                autoStart: true,
-                delay: 70,
-                deleteSpeed: 70,
-                loop: true,
-              }}
-            />
+            {isReady ? (
+              <OccupationsTypewriter strings={occupations} />
+            ) : (
+              <span className="greetings-textBlock-occupation">&nbsp;</span>
+            )}
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0 }}
-            animate={animateIn2}
+            animate={isReady ? animateIn2 : { opacity: 0 }}
             className="greetings-textBlock-description"
           >
             {t('description')}
@@ -115,36 +118,35 @@ const Greetings = () => {
 
         <motion.div
           initial={{ opacity: 0 }}
-          animate={animateIn3}
+          animate={isReady ? animateIn3 : { opacity: 0 }}
           className="greetings-textBlock-statistics"
         >
           <div className="greetings-textBlock-statistics-item">
+            <p className="greetings-textBlock-statistics-item-index">01</p>
             <p className="greetings-textBlock-statistics-item-number">2+</p>
-
             <p className="greetings-textBlock-statistics-item-text">{getIntlArray(t('statisticsText'))[0]}</p>
           </div>
 
           <div className="greetings-textBlock-statistics-item">
+            <p className="greetings-textBlock-statistics-item-index">02</p>
             <p className="greetings-textBlock-statistics-item-number">5+</p>
-
             <p className="greetings-textBlock-statistics-item-text">{getIntlArray(t('statisticsText'))[1]}</p>
           </div>
 
           <div className="greetings-textBlock-statistics-item">
+            <p className="greetings-textBlock-statistics-item-index">03</p>
             <p className="greetings-textBlock-statistics-item-number">7+</p>
-
             <p className="greetings-textBlock-statistics-item-text">{getIntlArray(t('statisticsText'))[2]}</p>
           </div>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0 }}
-          animate={animateIn3}
+          animate={isReady ? animateIn3 : { opacity: 0 }}
           className="greetings-textBlock-buttonsContainer"
         >
           <motion.a
             href="/#contacts"
-            data-blobity-radius="12"
             className="greetings-textBlock-buttonsContainer-contactButton"
           >
             <svg
@@ -167,7 +169,6 @@ const Greetings = () => {
           <motion.a
             href={locale === "ru" ? "/static/frontend-sisyphus-cv-ru.pdf" : "/static/frontend-sisyphus-cv.pdf"}
             target="blank"
-            data-blobity-radius="12"
             className="greetings-textBlock-buttonsContainer-downloadCVButton"
           >
             <p className="greetings-textBlock-buttonsContainer-downloadCVButton-text">
@@ -182,7 +183,6 @@ const Greetings = () => {
               key={icon.id} 
               href={icon.path} 
               data-blobity-magnetic="false" 
-              data-blobity-radius="10px"
               className="greetings-textBlock-iconsContainer-icon"
             >
               {icon.component}
@@ -191,26 +191,22 @@ const Greetings = () => {
         </div>
       </div>
 
-      <motion.img
-        src="/static/profile-picture.png"
-        alt=""
-        ref={imgRef}
-        style={{
-          rotate: imgRotate,
-        }}
+      <motion.div
         initial={{ opacity: 0 }}
-        animate={animateIn1}
-        className="greetings-portrait desktop"
-      />
-
-      <motion.img
-        src="/static/profile-picture.png"
-        alt=""
-        ref={mobileImgRef}
-        initial={{ opacity: 0 }}
-        animate={animateIn1}
-        className="greetings-portrait mobile"
-      />
+        animate={isReady ? animateIn1 : { opacity: 0 }}
+        className="greetings-portraitWrap"
+      >
+        <motion.div ref={imgRef} style={{ rotate: imgRotate }} className="greetings-portrait">
+          <Image
+            src="/static/profile-picture.png"
+            alt={t("title")}
+            fill
+            priority
+            sizes="(max-width: 768px) 280px, 380px"
+            className="object-cover"
+          />
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

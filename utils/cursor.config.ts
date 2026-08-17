@@ -1,9 +1,10 @@
 export const initialCursorOptions = {
   focusableElementsOffsetX: 4,
   focusableElementsOffsetY: 4,
-  color: "#c4b39d",
-  dotColor: "#071f35",
+  color: "#d7ff3f",
+  dotColor: "#d7ff3f",
   invert: true,
+  radius: 0,
   focusableElements:
     "[data-blobity], a:not([data-no-blobity]), button:not([data-no-blobity]), [data-blobity-tooltip]",
   font: "'NotoSans', -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif",

@@ -2,28 +2,31 @@
 @import "../../app/globals.css";
 
 .contacts {
-    @apply grid justify-between items-start grid-cols-2 gap-y-[20px] 
-           gap-x-[30px] pb-[40px] w-full;
+    @apply grid justify-between items-start grid-cols-2 gap-y-[20px]
+           gap-x-[24px] pb-[40px] w-full;
 
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
         @apply block px-0 pb-[30px];
     }
 }
 
 .contacts-title {
-    @apply col-span-2 text-white text-[42px] font-ru-secondary font-bold uppercase;
+    @apply col-span-2 text-white text-[42px] font-ru-secondary font-bold uppercase tracking-[-0.03em];
 
-    @media (max-width: 480px) {
-        @apply text-[24px] leading-[34px];
+    @media (max-width: 768px) {
+        @apply text-[24px] leading-[32px];
     }
 }
 
+.contacts .sectionMeta {
+    @apply col-span-2 mb-[8px];
+}
 
 .contacts-connectInfo {
-    @apply grid col-span-1 gap-y-[24px] px-[20px] pt-[34px] pb-[20px] w-full 
-           bg-gradient-to-r from-gradient-start to-gradient-end rounded-[15px]; 
-    
-    @media (max-width: 480px) {
+    @apply grid col-span-1 gap-y-[20px] px-[20px] pt-[28px] pb-[20px] w-full
+           bg-surface border border-line;
+
+    @media (max-width: 768px) {
         @apply gap-y-[12px] mt-[12px];
     }
 }
@@ -36,29 +39,17 @@
     @apply font-ru-primary;
 }
 
-.contacts-connectInfo-title {   
-    @apply text-white2 text-[18px] font-bold;
-
-    @media (max-width: 480px) {
-        @apply text-[16px];
-    }
+.contacts-connectInfo-title {
+    @apply text-white text-[13px] font-mono uppercase tracking-[0.16em] font-bold;
 }
 
 .contacts-connectInfo-description {
-    @apply text-white2 text-[16px] brightness-75;
-
-    @media (max-width: 480px) {
-        @apply text-[14px];
-    }
+    @apply text-white/60 text-[15px] leading-[24px];
 }
 
 .contacts-connectInfo-points-item-text,
 .contacts-connectInfo-email-content-text {
-    @apply text-white text-[16px];
-
-    @media (max-width: 480px) {
-        @apply text-[14px];
-    }
+    @apply text-white text-[15px];
 }
 
 .contacts-connectInfo-points-item-text {
@@ -66,31 +57,27 @@
 }
 
 .contacts-connectInfo-email-content-text {
-    @apply font-bold;
+    @apply font-mono text-[14px];
 }
 
 .contacts-connectInfo-email-title {
-    @apply text-white2 text-[16px] brightness-75;
+    @apply text-white/45 text-[11px] font-mono uppercase tracking-[0.16em];
 }
 
 .contacts-connectInfo-points {
-    @apply grid justify-items-center gap-y-[16px];
+    @apply grid justify-items-center gap-y-[14px];
 }
 
 .contacts-connectInfo-points-item {
-    @apply flex items-center gap-x-[12px] w-full;
+    @apply flex items-center gap-x-[12px] w-full text-white;
 }
 
 .contacts-connectInfo-points-item svg {
-    @apply min-w-[24px] min-h-[24px];
-
-    @media (max-width: 480px) {
-        @apply w-[20px] min-w-[20px] h-[20px] min-h-[20px];
-    }
+    @apply min-w-[20px] min-h-[20px];
 }
 
 .contacts-connectInfo-email {
-    @apply grid gap-y-[8px] py-[12px] w-full border-[#576a78] border-y-[1px];
+    @apply grid gap-y-[8px] py-[14px] w-full border-line border-y;
 }
 
 .contacts-connectInfo-email-content {
@@ -98,26 +85,25 @@
 }
 
 .contacts-connectInfo-email-content-button {
-    @apply flex justify-center items-center gap-x-[8px] px-[10px] py-[4px] 
-           h-[32px] bg-light-theme dark:bg-theme border-white border-[1px] rounded-[7.5px];
+    @apply flex justify-center items-center gap-x-[8px] px-[10px] py-[4px]
+           h-[32px] bg-transparent border border-line text-white;
 }
 
 .contacts-connectInfo-email-content-button > p {
-    @apply text-white text-[16px] font-ru-primary font-medium;
+    @apply text-white text-[11px] font-mono uppercase tracking-[0.12em];
 
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
         @apply hidden;
     }
 }
 
 .contacts-connectInfo-iconsContainer {
-    @apply flex items-center gap-x-[16px];
+    @apply flex items-center gap-x-[12px];
 }
 
 .contacts-connectInfo-iconsContainer-icon {
-    @apply flex justify-center items-center w-[32px] h-[32px] 
-           bg-linear-to-r from-gradient-start to-gradient-end 
-           backdrop-blur-md rounded-[7.5px];
+    @apply flex justify-center items-center w-[36px] h-[36px]
+           bg-transparent border border-line text-white;
 }
 
 .contacts-connectInfo-iconsContainer-icon > svg {

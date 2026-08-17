@@ -3,47 +3,39 @@
 @import "../../app/globals.css";
 
 .footer {
-    @apply relative flex justify-between items-center mx-auto py-[30px] 
-           w-full max-w-[1220px] h-[102px];
+    @apply relative flex justify-between items-center mx-auto py-[28px]
+           w-full max-w-[1220px] h-auto border-t border-line z-1;
 
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
         @apply justify-center h-[72px];
-    }
-
-    @media (max-width: 400px) {
-        @apply h-[62px];
     }
 }
 
 .footer-textBlock {
-    @apply flex items-center gap-x-[8px] text-white2 text-[20px] 
-           font-ru-primary font-normal uppercase;
+    @apply flex items-center gap-x-[8px] text-white/50 text-[12px]
+           font-mono uppercase tracking-[0.14em];
 
-    @media (max-width: 480px) {
-        @apply pb-[4px] text-[13px] text-left;
-    }
-
-    @media (max-width: 420px) {
-        @apply text-[12px];
+    @media (max-width: 768px) {
+        @apply pb-[4px] text-[11px] text-left;
     }
 }
 
 .footer-textBlock-copyright {
-    @apply pb-[5px] text-[24px];
+    @apply pb-0 text-[12px] text-accent;
 
-    @media (max-width: 480px) {
-        @apply pb-0 text-[20px];
+    @media (max-width: 768px) {
+        @apply text-[12px];
     }
 }
 
 .footer-scrollButton {
-    @apply flex items-center gap-x-[8px] px-[5px] py-[2px];
+    @apply flex items-center gap-x-[8px] px-[5px] py-[2px] text-white/60;
 
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
         @apply hidden;
     }
 }
 
 .footer-scrollButton > p {
-    @apply text-white2 text-[16px] text-left font-ru-primary uppercase;
+    @apply text-white/60 text-[12px] text-left font-mono uppercase tracking-[0.14em];
 }

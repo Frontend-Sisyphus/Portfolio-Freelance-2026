@@ -1,11 +1,11 @@
 export const aboutParagraphs = [
   {
-    id: crypto.randomUUID(),
+    id: "about-1",
   },
   {
-    id: crypto.randomUUID(),
+    id: "about-2",
   },
   {
-    id: crypto.randomUUID(),
+    id: "about-3",
   },
 ];

@@ -1,31 +1,31 @@
 export const headerTextLinks = [
   {
-    id: crypto.randomUUID(),
+    id: "home",
     path: "/#home",
     label: "Главная"
   },
   {
-    id: crypto.randomUUID(),
+    id: "about",
     path: "/#about",
     label: "Обо мне"
   },
   {
-    id: crypto.randomUUID(),
+    id: "work",
     path: "/#work",
     label: "Работа и образование"
   },
   {
-    id: crypto.randomUUID(),
+    id: "tools",
     path: "/#tools",
-    label: "Инструменты"
+    label: "Практика"
   },
   {
-    id: crypto.randomUUID(),
+    id: "projects",
     path: "/#projects",
     label: "Проекты"
   },
   {
-    id: crypto.randomUUID(),
+    id: "contacts",
     path: "/#contacts",
     label: "Контакты"
   },

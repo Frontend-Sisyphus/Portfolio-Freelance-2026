@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@import "../../app/globals.css";
+
+.impact {
+  @apply relative grid justify-items-start pb-[100px] w-full h-auto;
+
+  @media (max-width: 768px) {
+    @apply pb-[80px];
+  }
+}
+
+.impact-grid {
+  @apply grid grid-cols-3 gap-[12px] mt-[28px] pt-[24px] w-full border-t border-line;
+
+  @media (max-width: 768px) {
+    @apply grid-cols-1 gap-[10px] mt-[20px];
+  }
+}
+
+.impact-item {
+  @apply grid gap-y-[10px] p-[24px] bg-surface border border-line;
+
+  @media (max-width: 768px) {
+    @apply p-[16px] justify-items-start;
+  }
+}
+
+.impact-item-index {
+  @apply m-0 font-mono text-[11px] uppercase tracking-[0.18em] text-accent;
+}
+
+.impact-item-value {
+  @apply m-0 text-white text-[56px] font-mono font-medium leading-none;
+
+  @media (max-width: 768px) {
+    @apply text-[42px];
+  }
+}
+
+.impact-item-value sup {
+  @apply ml-[4px] text-accent text-[16px] leading-none align-super;
+}
+
+.impact-item-label {
+  @apply m-0 max-w-[220px] text-white/60 text-[15px] leading-[22px] font-ru-primary;
+
+  @media (max-width: 768px) {
+    @apply max-w-none text-[14px] leading-[20px];
+  }
+}
+
+.impact-item-note {
+  @apply m-0 mt-[4px] font-mono text-[11px] uppercase tracking-[0.12em] text-white/35;
+}

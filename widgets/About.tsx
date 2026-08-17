@@ -1,11 +1,7 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 
 import { useTranslations } from "next-intl";
-
-import { useInView } from "framer-motion";
-
-import { useView } from "@/context/ViewProvider";
 
 import { getIntlArray } from "@/utils/generalFunctions";
 
@@ -13,24 +9,17 @@ import { aboutParagraphs } from "@/data/aboutParagraphs";
 
 import AnimatedTitle from "@/shared/AnimatedTitle";
 import AnimatedParagraph from "@/shared/AnimatedParagraph";
+import SectionMeta from "@/shared/SectionMeta";
 
 import "@/styles/widgets/about.css";
 
 const About = () => {
   const t = useTranslations('about');
-  const { setSectionInView } = useView();
 
-  const aboutRef = useRef(null);
-
-  const isInView = useInView(aboutRef);
-
-  useEffect(() => {
-    if (isInView) {
-      setSectionInView("обо мне");
-    }
-  }, [isInView]);
   return (
-    <section id="about" ref={aboutRef} className="about">
+    <section id="about" className="about">
+      <SectionMeta index="01" label={t("meta")} />
+
       <AnimatedTitle
         type={2}
         text={t('title')}

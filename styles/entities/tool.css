@@ -3,13 +3,12 @@
 @import "../../app/globals.css";
 
 .tool {
-  @apply grid justify-items-start col-span-1 gap-y-[12px] py-[16px] 
-         px-[18px] bg-gradient-to-r from-gradient-start to-gradient-end 
-         border-[1px] border-transparent rounded-[10px] duration-400 ease-in-out;
+  @apply grid justify-items-start col-span-1 gap-y-[12px] py-[16px]
+         px-[18px] bg-surface border border-line duration-400 ease-in-out;
 }
 
 .tool:hover {
-  @apply shadow-[0px,6px,8px,gradient2-end] border-[1px] border-gradient2-end;
+  @apply border-accent;
 }
 
 .tool-top {
@@ -29,11 +28,11 @@
 }
 
 .tool-top-right-class-circle {
-  @apply w-[8px] h-[8px] rounded-full;
+  @apply w-[8px] h-[8px];
 }
 
 .tool-top-right-class-title {
-  @apply text-[14px] font-ru-primary font-medium;
+  @apply text-[12px] font-mono uppercase tracking-[0.08em] font-medium;
 }
 
 .tool-bottom {
@@ -41,13 +40,13 @@
 }
 
 .tool-bottom-progress {
-  @apply relative w-full h-[6px] bg-white2 dark:bg-theme rounded-[2.5px] overflow-hidden;
+  @apply relative w-full h-[2px] bg-white/10 overflow-hidden;
 }
 
 .tool-bottom-progress-percentage {
-  @apply absolute left-0 top-0 w-full h-full bg-linear-to-br from-gradient2-start via-gradient2-center to-gradient2-end;
+  @apply absolute left-0 top-0 w-full h-full bg-accent;
 }
 
 .tool-bottom-percentage {
-  @apply w-full text-white2 text-[14px] text-right font-ru-primary font-medium brightness-75;
+  @apply w-full text-white/45 text-[12px] text-right font-mono font-medium;
 }

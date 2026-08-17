@@ -1,6 +1,6 @@
 export const projects = [
   {
-    id: crypto.randomUUID(),
+    id: "startup-cycle",
     owner: "Cordinate system LLC",
     banner: "/static/startup-cycle.png",
     title: "Startup Cycle",
@@ -20,7 +20,7 @@ export const projects = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "halfcoder",
     owner: "Halfcoder",
     banner: "/static/halfcoder.png",
     title: "Halfcoder",
@@ -39,7 +39,7 @@ export const projects = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "helldivers-help",
     owner: "",
     banner: "/static/helldivers-help.png",
     title: "Helldivers.help",
@@ -60,7 +60,7 @@ export const projects = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "ctf-cup",
     owner: "AHISS",
     banner: "/static/ctf-cup.png",
     title: "CTF Cup",
@@ -79,7 +79,7 @@ export const projects = [
     ],
   },
   {
-    id: crypto.randomUUID(),
+    id: "ctf-market",
     owner: "AHISS",
     banner: "/static/ctf-market.png",
     title: "CTF Market",
@@ -89,7 +89,7 @@ export const projects = [
     tags: ["Vue.js", "TypeScript", "VueX", "Axios", "SCSS"],
   },
   {
-    id: crypto.randomUUID(),
+    id: "itc-site",
     owner: "ITC",
     banner: "/static/itc-site.png",
     title: "ITC site",

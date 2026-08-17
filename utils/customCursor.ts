@@ -46,7 +46,7 @@ const DEFAULT_CURSOR_OPTIONS: CursorOptions = {
   dotSize: 8,
   magnetic: true,
   mode: "normal",
-  radius: 4,
+  radius: 0,
   font: "sans-serif",
   fontWeight: 400,
   fontSize: 40,
@@ -630,7 +630,6 @@ export class CustomCursor {
       this.currentMagnetic.onTick = () => {
         if (!this.activeTooltip && this.activeFocusedElement === element) {
           const { width, height, x, y } = element.getBoundingClientRect();
-          const radius = element.getAttribute("data-blobity-radius");
 
           this.kinetInstance[this.kinetDefaultMethod]("textOpacity", 0);
           this.morph(
@@ -640,7 +639,7 @@ export class CustomCursor {
               x: x - this.currentOffsetX,
               y: y - this.currentOffsetY,
             },
-            radius != null ? parseInt(radius, 10) : this.options.radius
+            0
           );
         }
       };
@@ -686,7 +685,6 @@ export class CustomCursor {
 
   private highlightElement = (element: HTMLElement) => {
     const { width, height, x, y } = element.getBoundingClientRect();
-    const radius = element.getAttribute("data-blobity-radius");
 
     this.kinetInstance[this.kinetDefaultMethod]("textOpacity", 0);
     this.morph(
@@ -696,7 +694,7 @@ export class CustomCursor {
         x: x - this.currentOffsetX,
         y: y - this.currentOffsetY,
       },
-      radius != null ? parseInt(radius, 10) : this.options.radius
+      0
     );
   };
 

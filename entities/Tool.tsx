@@ -17,13 +17,13 @@ export default function Tool({title, icon, progress}: ToolProps) {
 
   const getClassColor = (progress: number) => {
     if(progress >= 80) {
-      return "#f0743b";
+      return "var(--color-accent)";
     } else if (progress >= 50 && progress < 80) {
-      return "#5ca6f8";
+      return "var(--color-fg)";
     } else if (progress >= 30 && progress < 50) {
-      return "#60cb78";
+      return "var(--color-white2)";
     } else {
-      return "#626365";
+      return "#7a7a74";
     }
   }
 
