@@ -1,14 +1,20 @@
 "use client";
-import React, {useEffect} from "react";
 
-import { initialBlobityOptions } from "@/utils/blobity.config";
+import { useEffect } from "react";
 
-import useBlobity from "blobity/lib/react/useBlobity";
+import { CustomCursor } from "@/utils/customCursor";
+import { initialCursorOptions } from "@/utils/cursor.config";
 
 const Cursor = () => {
-  const blobity = useBlobity(initialBlobityOptions);
+  useEffect(() => {
+    const cursor = new CustomCursor(initialCursorOptions);
 
-  return <div />;
+    return () => {
+      cursor.destroy();
+    };
+  }, []);
+
+  return null;
 };
 
 export default Cursor;

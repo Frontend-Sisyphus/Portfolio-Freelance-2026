@@ -1,10 +1,8 @@
-export const initialBlobityOptions = {
-  licenseKey: "opensource",
+export const initialCursorOptions = {
   focusableElementsOffsetX: 4,
   focusableElementsOffsetY: 4,
   color: "#c4b39d",
   dotColor: "#071f35",
-  // color: "#222222",
   invert: true,
   focusableElements:
     "[data-blobity], a:not([data-no-blobity]), button:not([data-no-blobity]), [data-blobity-tooltip]",
