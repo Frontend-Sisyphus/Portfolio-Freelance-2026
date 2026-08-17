@@ -49,6 +49,7 @@ const Header = () => {
           width={84}
           height={28}
           className="header-left-logo"
+          style={{ width: "auto", height: 28 }}
           priority
         />
 

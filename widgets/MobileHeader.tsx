@@ -78,6 +78,7 @@ const MobileHeader = () => {
           width={32}
           height={26}
           className="mobileHeader-logo"
+          style={{ width: "auto", height: 26 }}
           priority
         />
 
