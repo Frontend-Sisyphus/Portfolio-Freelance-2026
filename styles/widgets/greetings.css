@@ -53,7 +53,7 @@
 }
 
 .greetings-textBlock-title {
-    @apply relative mt-[10px] text-white text-[64px] font-ru-secondary font-bold leading-[68px]
+    @apply relative mt-[10px] text-white text-[58px] font-ru-secondary font-bold leading-[58px]
            uppercase tracking-[-0.04em];
 
     @media (max-width: 768px) {
