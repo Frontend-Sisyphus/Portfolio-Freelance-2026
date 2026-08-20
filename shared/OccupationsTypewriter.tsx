@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useState } from "react";
 
 type OccupationsTypewriterProps = {
@@ -18,10 +19,12 @@ export default function OccupationsTypewriter({
     }
 
     const current = strings[index % strings.length];
-    const pause = !deleting && text === current;
-    const delay = deleting ? 36 : pause ? 1200 : 62;
+
+    const isFinishedTyping = !deleting && text === current;
+    const delay = deleting ? 36 : isFinishedTyping ? 1200 : 62;
 
     const timeoutId = window.setTimeout(() => {
+      // Печатаем
       if (!deleting) {
         if (text === current) {
           setDeleting(true);
@@ -32,13 +35,15 @@ export default function OccupationsTypewriter({
         return;
       }
 
+      // Удаление закончено
       if (text === "") {
         setDeleting(false);
         setIndex((prev) => (prev + 1) % strings.length);
         return;
       }
 
-      setText(current.slice(0, -1));
+      // Удаляем последний символ
+      setText((prev) => prev.slice(0, -1));
     }, delay);
 
     return () => window.clearTimeout(timeoutId);
